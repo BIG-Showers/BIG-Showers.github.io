@@ -110,7 +110,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/07/10/浅谈Splay/splay_2.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/10/浅谈Splay/splay_3.png">
 <meta property="og:image" content="http://yoursite.com/2019/07/10/浅谈Splay/splay_4.png">
-<meta property="og:updated_time" content="2019-07-10T01:36:21.795Z">
+<meta property="og:updated_time" content="2019-07-10T02:20:13.083Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈Splay">
 <meta name="twitter:description" content="浅谈 Splay什么是 Splay伸展树（Splay Tree），也叫分裂树，是一种二叉排序树，它能在O(log n)内完成插入、查找和删除操作。它由丹尼尔·斯立特（Daniel Sleator） 和 罗伯特·恩卓·塔扬（Robert Endre Tarjan 又是他）在1985年发明的。假设想要对一个二叉排序树执行一系列的查找操作。为了使整个查找时间更小，被查频率高的那些条目就应当经常处于靠近树">
@@ -415,7 +415,7 @@
                 
               
 
-              <time title="创建时间：07-10-2019 08:27:12 / 修改时间：09:36:21" itemprop="dateCreated datePublished" datetime="2019-07-10T08:27:12+08:00">07-10-2019</time>
+              <time title="创建时间：07-10-2019 08:27:12 / 修改时间：10:20:13" itemprop="dateCreated datePublished" datetime="2019-07-10T08:27:12+08:00">07-10-2019</time>
             </span>
           
 
@@ -471,7 +471,7 @@
 <li>支持区间翻转；</li>
 <li>支持求一个结点的前驱和后继；</li>
 <li>支持求一个结点的排名；</li>
-<li>支持求第$k$大；</li>
+<li>支持求第k大；</li>
 </ul>
 <h2 id="Splay-需要维护的内容"><a href="#Splay-需要维护的内容" class="headerlink" title="Splay 需要维护的内容"></a>Splay 需要维护的内容</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int val[N];//当前结点的值</span><br><span class="line">int cnt[N];//有多少个重复结点</span><br><span class="line">int pre[N];//当前结点的父结点</span><br><span class="line">int siz[N];//以当前结点为根的子树大小</span><br><span class="line">int son[N][2];//当前结点的子结点([0]为左儿子，[1]为右儿子)</span><br><span class="line">bool rev[N];//是否翻转</span><br></pre></td></tr></table></figure>
 <h2 id="Splay-支持的操作"><a href="#Splay-支持的操作" class="headerlink" title="Splay 支持的操作"></a>Splay 支持的操作</h2><h3 id="get-dir-操作"><a href="#get-dir-操作" class="headerlink" title="get_dir 操作"></a>get_dir 操作</h3><p>这个操作的目的是确定一个结点是父结点的左儿子还是右儿子，返回值为0或1.</p>
@@ -482,12 +482,12 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">inline void push_up(int x)</span><br><span class="line">&#123;</span><br><span class="line">	siz[x]=siz[son[x][0]]+siz[son[x][1]]+cnt[x];</span><br><span class="line"></span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="rotate-操作"><a href="#rotate-操作" class="headerlink" title="rotate 操作"></a>rotate 操作</h3><p>核心操作。 Splay 通过旋转操作来保持平衡。<br>每次旋转有两种不同情况的旋转，分别是当前结点是父亲结点的左儿子和右儿子。</p>
 <p>如果当前结点是父亲的左儿子，如下图，我们要把红点向上一层旋转：</p>
-<p><img src="/2019/07/10/浅谈Splay/splay_1.png" alt="splay_1"></p>
+<p><img src="/2019/07/10/浅谈Splay/splay_1.png" alt></p>
 <p>为了方便，我们不妨令这颗树的中序遍历为 $1-2-3-4-5-6-7$ 。如下图，2号点就是我们要旋转的点：</p>
-<p><img src="/2019/07/10/浅谈Splay/splay_2.png" alt="splay_2"></p>
+<p><img src="/2019/07/10/浅谈Splay/splay_2.png" alt></p>
 <p>我们可以清楚的看出 rotate 的变化规律：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">son[4][0]=3;</span><br><span class="line">pre[3]=4;//目标结点父亲的左儿子-&gt;目标结点的右儿子</span><br><span class="line">son[6][0]=2;</span><br><span class="line">pre[2]=6;//目标结点爷爷的（左/右）儿子-&gt;目标结点</span><br><span class="line">son[2][1]=4;</span><br><span class="line">pre[4]=2;//目标结点的右儿子-&gt;目标结点的父亲</span><br></pre></td></tr></table></figure></p>
 <p>同理，我们可以看出当前结点是父亲的右儿子时的规律（图中6号结点是目标结点）：</p>
-<p><img src="/2019/07/10/浅谈Splay/splay_3.png" alt="splay_3"></p>
+<p><img src="/2019/07/10/浅谈Splay/splay_3.png" alt></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">son[4][1]=5;</span><br><span class="line">pre[5]=4;//目标结点父亲的右儿子-&gt;目标结点的左儿子</span><br><span class="line">son[2][1]=6;</span><br><span class="line">pre[6]=2;//目标结点爷爷的（左/右）儿子-&gt;目标结点</span><br><span class="line">son[6][0]=4;</span><br><span class="line">pre[4]=6;//目标结点的左儿子-&gt;目标结点的父亲</span><br></pre></td></tr></table></figure>
 <p>归纳一下，可以得出以下步骤：</p>
 <ul>
@@ -507,7 +507,7 @@
 <h3 id="insert-操作"><a href="#insert-操作" class="headerlink" title="insert 操作"></a>insert 操作</h3><p>这个操作的目的是向 splay 里插入一个值。<br>和上一个操作类似，也是 需要在每个结点处判断当前结点值是否小于指定值，再决定向左或向右，如果结点存在则直接自增cnt的值。否则新建结点并与父结点连边。<br>因为新建结点时可能会拉出一条链，为了保持 splay 的平衡，我们需要将该结点 splay 到根。</p>
 <p>代码实现如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">void insert(int v)</span><br><span class="line">&#123;</span><br><span class="line">	int x=root,f=0;</span><br><span class="line"></span><br><span class="line">	while(x&amp;&amp;val[x]!=v)</span><br><span class="line">	&#123;</span><br><span class="line">		f=x;</span><br><span class="line">		x=son[x][v&gt;val[x]];</span><br><span class="line">	&#125;</span><br><span class="line">	if(x) ++cnt[x];</span><br><span class="line">	else</span><br><span class="line">	&#123;</span><br><span class="line">		x=(++ncnt);</span><br><span class="line">		if(f) son[f][v&gt;val[f]]=x;</span><br><span class="line">		val[x]=v;</span><br><span class="line">		cnt[x]=1;</span><br><span class="line">		pre[x]=f;</span><br><span class="line">		siz[x]=1;</span><br><span class="line">		son[x][0]=0;</span><br><span class="line">		son[x][1]=0;</span><br><span class="line">	&#125;</span><br><span class="line">	splay(x);</span><br><span class="line"></span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="kth-操作"><a href="#kth-操作" class="headerlink" title="kth 操作"></a>kth 操作</h3><p>显然，这个操作是求第$k$大的数。<br>同样是从根结点开始向下搜，每次需要判断$k$与左子树大小，与（左子树大小+该结点 cnt ）的大小关系，再决定向左或向右，或是返回这个结点。</p>
+<h3 id="kth-操作"><a href="#kth-操作" class="headerlink" title="kth 操作"></a>kth 操作</h3><p>显然，这个操作是求第k大的数。<br>同样是从根结点开始向下搜，每次需要判断k与左子树大小，与（左子树大小+该结点 cnt ）的大小关系，再决定向左或向右，或是返回这个结点。</p>
 <p>代码实现如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">int kth(int ord)</span><br><span class="line">&#123;</span><br><span class="line">	int x=root;</span><br><span class="line"></span><br><span class="line">	while(true)</span><br><span class="line">	&#123;</span><br><span class="line">		push_down(x);//pushdown操作会在后面提到，不影响kth操作</span><br><span class="line">		if(son[x][0]&amp;&amp;ord&lt;=siz[son[x][0]]) x=son[x][0];</span><br><span class="line">		else if(ord&gt;siz[son[x][0]]+cnt[x])</span><br><span class="line">		&#123;</span><br><span class="line">			ord-=(siz[son[x][0]]+cnt[x]);</span><br><span class="line">			x=son[x][1];</span><br><span class="line">		&#125;</span><br><span class="line">		else return x;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="rank-操作"><a href="#rank-操作" class="headerlink" title="rank 操作"></a>rank 操作</h3><p>返回指定值的排名。<br>只需要把这个值转到根，再返回根结点左子树大小即可。</p>
@@ -519,10 +519,10 @@
 <h3 id="succ-操作"><a href="#succ-操作" class="headerlink" title="succ 操作"></a>succ 操作</h3><p>求指定值的后继（比它大的数中最小的）。<br>同理，只需要找到右子树中最左边的那一个，返回即可。</p>
 <p>代码实现如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">int succ(int v)</span><br><span class="line">&#123;</span><br><span class="line">	int u;</span><br><span class="line"></span><br><span class="line">	find(v);</span><br><span class="line">	u=son[root][1];</span><br><span class="line">	while(son[u][0]) u=son[u][0];</span><br><span class="line"></span><br><span class="line">	return u;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <h3 id="remove-操作"><a href="#remove-操作" class="headerlink" title="remove 操作"></a>remove 操作</h3><p>删除指定值。<br>如图，可以看出，如果把 prev(x) splay 到根结点，把 succ(x) spaly 到 prev(x) 的右儿子，那么 succ(x) 的左儿子只会有目标结点一个结点，删除方法显而易见。</p>
-<p><img src="/2019/07/10/浅谈Splay/splay_4.png" alt="splay_4"></p>
+<p><img src="/2019/07/10/浅谈Splay/splay_4.png" alt></p>
 <p>代码实现如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">void remove(int v)</span><br><span class="line">&#123;</span><br><span class="line">	int p=prev(v),s=succ(v),tar;</span><br><span class="line"></span><br><span class="line">	splay(p);</span><br><span class="line">	splay(s,p);</span><br><span class="line">	tar=son[p][0];</span><br><span class="line">	if(cnt[tar]&gt;1)</span><br><span class="line">	&#123;</span><br><span class="line">		--cnt[tar];</span><br><span class="line">		splay(tar);</span><br><span class="line">	&#125;</span><br><span class="line">	else son[p][0]=0;</span><br><span class="line"></span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="reverse-操作"><a href="#reverse-操作" class="headerlink" title="reverse 操作"></a>reverse 操作</h3><p>和线段树区间加一样，这个地方也运用了“懒标记”的思想。</p>
+<h3 id="reverse-操作"><a href="#reverse-操作" class="headerlink" title="reverse 操作"></a>reverse 操作</h3><p>区间翻转， Splay 的标准操作之一。<br>和线段树区间加一样，这个地方也运用了“懒标记”的思想。和 remove 操作类似，将$[L,R]$区间提取出来，可以把$L-1$ splay 到根结点，把$R+1$ splay 到根结点的儿子，</p>
 
       
     </div>
