@@ -1760,6 +1760,12 @@ pre .javascript .function {
 .site-author-image {
   border-radius: 100%;
 }
+.site-author-image {
+  transition: transform 1s ease-out;
+}
+.site-author-image:hover {
+  transform: rotateZ(360deg);
+}
 .site-author-name {
   margin: 5px 0 0;
   text-align: center;
@@ -1793,7 +1799,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff04;
+  background: #61ff1c;
 }
 .feed-link,
 .chat {
@@ -2781,4 +2787,10 @@ hr {
 }
 .post-gallery .post-gallery-img img {
   padding: 3px;
+}
+* {
+  cursor: url("https://files-cdn.cnblogs.com/files/C-C-C-P/Hexo_cur_nor.ico"), auto !important;
+}
+:active {
+  cursor: url("https://files-cdn.cnblogs.com/files/C-C-C-P/Hexo_cur_act.ico"), auto !important;
 }
