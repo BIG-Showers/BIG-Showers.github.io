@@ -24,6 +24,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link rel="stylesheet" href="/lib/pace/pace-theme-flash.min.css?v=1.0.2">
+
 
 
 
@@ -102,20 +109,20 @@
 <meta name="keywords" content="Data Structure">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅谈Splay">
-<meta property="og:url" content="http://yoursite.com/2019/07/10/浅谈Splay/index.html">
+<meta property="og:url" content="https://big-showers.github.io/2019/07/10/浅谈Splay/index.html">
 <meta property="og:site_name" content="BIG-Showers&#39; Blog">
 <meta property="og:description" content="浅谈 Splay什么是 Splay伸展树（Splay Tree），也叫分裂树，是一种二叉排序树，它能在O(log n)内完成插入、查找和删除操作。它由丹尼尔·斯立特（Daniel Sleator） 和 罗伯特·恩卓·塔扬（Robert Endre Tarjan 又是他）在1985年发明的。假设想要对一个二叉排序树执行一系列的查找操作。为了使整个查找时间更小，被查频率高的那些条目就应当经常处于靠近树">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://yoursite.com/2019/07/10/浅谈Splay/splay_1.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/10/浅谈Splay/splay_2.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/10/浅谈Splay/splay_3.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/10/浅谈Splay/splay_4.png">
-<meta property="og:image" content="http://yoursite.com/2019/07/10/浅谈Splay/splay_5.png">
-<meta property="og:updated_time" content="2019-07-10T23:39:04.000Z">
+<meta property="og:image" content="https://big-showers.github.io/2019/07/10/浅谈Splay/splay_1.png">
+<meta property="og:image" content="https://big-showers.github.io/2019/07/10/浅谈Splay/splay_2.png">
+<meta property="og:image" content="https://big-showers.github.io/2019/07/10/浅谈Splay/splay_3.png">
+<meta property="og:image" content="https://big-showers.github.io/2019/07/10/浅谈Splay/splay_4.png">
+<meta property="og:image" content="https://big-showers.github.io/2019/07/10/浅谈Splay/splay_5.png">
+<meta property="og:updated_time" content="2019-07-12T01:31:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅谈Splay">
 <meta name="twitter:description" content="浅谈 Splay什么是 Splay伸展树（Splay Tree），也叫分裂树，是一种二叉排序树，它能在O(log n)内完成插入、查找和删除操作。它由丹尼尔·斯立特（Daniel Sleator） 和 罗伯特·恩卓·塔扬（Robert Endre Tarjan 又是他）在1985年发明的。假设想要对一个二叉排序树执行一系列的查找操作。为了使整个查找时间更小，被查频率高的那些条目就应当经常处于靠近树">
-<meta name="twitter:image" content="http://yoursite.com/2019/07/10/浅谈Splay/splay_1.png">
+<meta name="twitter:image" content="https://big-showers.github.io/2019/07/10/浅谈Splay/splay_1.png">
 
 
 
@@ -123,7 +130,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/2019/07/10/浅谈Splay/">
+  <link rel="canonical" href="https://big-showers.github.io/2019/07/10/浅谈Splay/">
 
 
 
@@ -373,7 +380,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/10/浅谈Splay/">
+    <link itemprop="mainEntityOfPage" href="https://big-showers.github.io/2019/07/10/浅谈Splay/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LWQ">
@@ -431,7 +438,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：07-11-2019 07:39:04" itemprop="dateModified" datetime="2019-07-11T07:39:04+08:00">07-11-2019</time>
+                <time title="修改时间：07-12-2019 09:31:28" itemprop="dateModified" datetime="2019-07-12T09:31:28+08:00">07-12-2019</time>
               </span>
             
           
@@ -479,9 +486,10 @@
         <h1 id="浅谈-Splay"><a href="#浅谈-Splay" class="headerlink" title="浅谈 Splay"></a>浅谈 Splay</h1><h2 id="什么是-Splay"><a href="#什么是-Splay" class="headerlink" title="什么是 Splay"></a>什么是 Splay</h2><p><a href="https://baike.baidu.com/item/%E4%BC%B8%E5%B1%95%E6%A0%91/7003945?fr=aladdin" target="_blank" rel="noopener">伸展树</a>（Splay Tree），也叫分裂树，是一种<a href="https://baike.baidu.com/item/%E4%BA%8C%E5%8F%89%E6%8E%92%E5%BA%8F%E6%A0%91/10905079" target="_blank" rel="noopener">二叉排序树</a>，它能在O(log n)内完成插入、查找和删除操作。它由丹尼尔·斯立特（Daniel Sleator） 和 罗伯特·恩卓·塔扬（Robert Endre <strong>Tarjan</strong> <del>又是他</del>）在1985年发明的。<br>假设想要对一个二叉排序树执行一系列的查找操作。为了使整个查找时间更小，被查频率高的那些条目就应当经常处于靠近树根的位置。于是想到设计一个简单方法， 在每次查找之后对树进行重构，把被查找的条目搬移到离树根近一些的地方。 splay tree 应运而生。 splay tree 是一种自调整形式的二叉查找树，它会沿着从某个结点到树根之间的路径，通过一系列的旋转把这个结点搬移到树根去。  </p>
 <p align="right">（From 百度百科）</p>
 
-<p>因为 Splay 是一颗二叉排序树，所以它的每一个结点都应该满足如下性质：  </p>
+
+<p>因为 Splay 是一颗二叉排序树，所以它的每一个结点都应该满足如下性质：</p>
 <ul>
-<li>若左子树不空，则左子树上所有结点的值均小于或等于这个结点的值；  </li>
+<li>若左子树不空，则左子树上所有结点的值均小于或等于这个结点的值；</li>
 <li>若右子树不空，则右子树上所有结点的值均大于或等于这个结点的值；</li>
 </ul>
 <p>我们知道，在对二叉树进行中序遍历时，会先遍历左子树，然后是自身，最后才是右子树。所以一颗二叉排序树的中序遍历是不严格单调递增的。我们在进行重构树时，也需要保证中序遍历不变。</p>
@@ -590,7 +598,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="http://yoursite.com/2019/07/10/浅谈Splay/" title="浅谈Splay">http://yoursite.com/2019/07/10/浅谈Splay/</a>
+    <a href="https://big-showers.github.io/2019/07/10/浅谈Splay/" title="浅谈Splay">https://big-showers.github.io/2019/07/10/浅谈Splay/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -612,6 +620,18 @@
       
 
       
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
       
       
 
@@ -1334,6 +1354,25 @@
   
 
   
+  <script>
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id: 19696,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  </script>
+
 
   
 
