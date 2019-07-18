@@ -1799,7 +1799,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffc6bf;
+  background: #7eff9c;
 }
 .feed-link,
 .chat {
@@ -2798,7 +2798,9 @@ hr {
 }
 * {
   cursor: url("https://files-cdn.cnblogs.com/files/C-C-C-P/Hexo_cur_nor.ico"), auto !important;
+  cursor: url("https://files-cdn.cnblogs.com/files/C-C-C-P/Hexo_cur_act.ico"), pointer !important;
 }
 :active {
-  cursor: url("https://files-cdn.cnblogs.com/files/C-C-C-P/Hexo_cur_act.ico"), auto !important;
+  cursor: url("https://files-cdn.cnblogs.com/files/C-C-C-P/Hexo_cur_nor.ico"), auto !important;
+  cursor: url("https://files-cdn.cnblogs.com/files/C-C-C-P/Hexo_cur_act.ico"), pointer !important;
 }
