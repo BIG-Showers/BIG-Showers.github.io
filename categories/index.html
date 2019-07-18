@@ -433,6 +433,10 @@
           
 
   
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
 
 
 
@@ -583,7 +587,7 @@
       <i class="fa fa-area-chart"></i>
     </span>
     
-    <span title="站点总字数">NaNm</span>
+    <span title="站点总字数">8k</span>
   
 
   
@@ -592,7 +596,7 @@
       <i class="fa fa-coffee"></i>
     </span>
     
-    <span title="站点阅读时长">NaN:aN</span>
+    <span title="站点阅读时长">7 分钟</span>
   
 </div>
 
@@ -764,6 +768,35 @@
 
   
 
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '464f75f714990c9c2aa9',
+    clientSecret: '85734b2b69b0c5d8f9dbc670d6bec6fe34550e04',
+    repo: 'big-showers.github.io',
+    owner: 'big-showers',
+    admin: ['big-showers'],
+    id: md5(location.pathname),
+    
+      language: 'zh-CN',
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
 
   
 
