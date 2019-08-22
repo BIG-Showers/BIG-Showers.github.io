@@ -105,22 +105,18 @@
 
 
 
-  <meta name="description" content="什么是 $\mathbf{KMP}$$KMP$ 算法是一种改进的字符串匹配算法，由$D.E.$ K $nuth$，$J.H.$ M $orris$和$V.R.$ P $ratt$提出的，因此人们称它为克努特—莫里斯—普拉特操作（简称 $KMP$ 算法）。 $KMP$ 算法的关键是利用匹配失败后的信息，尽量减少模式串与主串的匹配次数以达到快速匹配的目的。具体实现就是实现一个 $next()$ 函数，">
-<meta name="keywords" content="String Algorithm">
+  <meta name="description" content="最短路算法$\mathbf{Floyd}$ 算法思路简介$Floyd$ 算法的思想本质是一个 $DP$ ，首先枚举中间点 $k$ ，对于每条路径$i-&amp;gt;j$ ，判断此路径若经过点 $k$是否更优。状态转移方程为 $dis[i][j]=\min(dis[i][k]+dis[k][j],dis[i][j])$$Floyd$ 算法枚举先中间点 $k$ ，再枚举路径起点 $i$ 和终点 $j$，每层">
+<meta name="keywords" content="Summarize">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈KMP">
-<meta property="og:url" content="https://big-showers.github.io/2019/07/14/浅谈KMP/index.html">
+<meta property="og:title" content="图论总结">
+<meta property="og:url" content="https://big-showers.github.io/2019/08/21/图论总结/index.html">
 <meta property="og:site_name" content="BIG-Showers&#39; Blog">
-<meta property="og:description" content="什么是 $\mathbf{KMP}$$KMP$ 算法是一种改进的字符串匹配算法，由$D.E.$ K $nuth$，$J.H.$ M $orris$和$V.R.$ P $ratt$提出的，因此人们称它为克努特—莫里斯—普拉特操作（简称 $KMP$ 算法）。 $KMP$ 算法的关键是利用匹配失败后的信息，尽量减少模式串与主串的匹配次数以达到快速匹配的目的。具体实现就是实现一个 $next()$ 函数，">
+<meta property="og:description" content="最短路算法$\mathbf{Floyd}$ 算法思路简介$Floyd$ 算法的思想本质是一个 $DP$ ，首先枚举中间点 $k$ ，对于每条路径$i-&amp;gt;j$ ，判断此路径若经过点 $k$是否更优。状态转移方程为 $dis[i][j]=\min(dis[i][k]+dis[k][j],dis[i][j])$$Floyd$ 算法枚举先中间点 $k$ ，再枚举路径起点 $i$ 和终点 $j$，每层">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://big-showers.github.io/2019/07/14/浅谈KMP/kmp_1.png">
-<meta property="og:image" content="https://big-showers.github.io/2019/07/14/浅谈KMP/kmp_2.png">
-<meta property="og:image" content="https://big-showers.github.io/2019/07/14/浅谈KMP/kmp_3.png">
-<meta property="og:updated_time" content="2019-08-22T00:05:52.000Z">
+<meta property="og:updated_time" content="2019-08-21T12:46:16.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅谈KMP">
-<meta name="twitter:description" content="什么是 $\mathbf{KMP}$$KMP$ 算法是一种改进的字符串匹配算法，由$D.E.$ K $nuth$，$J.H.$ M $orris$和$V.R.$ P $ratt$提出的，因此人们称它为克努特—莫里斯—普拉特操作（简称 $KMP$ 算法）。 $KMP$ 算法的关键是利用匹配失败后的信息，尽量减少模式串与主串的匹配次数以达到快速匹配的目的。具体实现就是实现一个 $next()$ 函数，">
-<meta name="twitter:image" content="https://big-showers.github.io/2019/07/14/浅谈KMP/kmp_1.png">
+<meta name="twitter:title" content="图论总结">
+<meta name="twitter:description" content="最短路算法$\mathbf{Floyd}$ 算法思路简介$Floyd$ 算法的思想本质是一个 $DP$ ，首先枚举中间点 $k$ ，对于每条路径$i-&amp;gt;j$ ，判断此路径若经过点 $k$是否更优。状态转移方程为 $dis[i][j]=\min(dis[i][k]+dis[k][j],dis[i][j])$$Floyd$ 算法枚举先中间点 $k$ ，再枚举路径起点 $i$ 和终点 $j$，每层">
 
 
 
@@ -128,7 +124,7 @@
 
   
   
-  <link rel="canonical" href="https://big-showers.github.io/2019/07/14/浅谈KMP/">
+  <link rel="canonical" href="https://big-showers.github.io/2019/08/21/图论总结/">
 
 
 
@@ -138,7 +134,7 @@
   };
 </script>
 
-  <title>浅谈KMP | BIG-Showers' Blog</title>
+  <title>图论总结 | BIG-Showers' Blog</title>
   
 
 
@@ -378,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://big-showers.github.io/2019/07/14/浅谈KMP/">
+    <link itemprop="mainEntityOfPage" href="https://big-showers.github.io/2019/08/21/图论总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LWQ">
@@ -395,7 +391,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浅谈KMP
+          <h1 class="post-title" itemprop="name headline">图论总结
 
               
             
@@ -421,23 +417,13 @@
                 
               
 
-              <time title="创建时间：07-14-2019 14:28:57" itemprop="dateCreated datePublished" datetime="2019-07-14T14:28:57+08:00">07-14-2019</time>
+              <time title="创建时间：08-21-2019 20:10:47 / 修改时间：20:46:16" itemprop="dateCreated datePublished" datetime="2019-08-21T20:10:47+08:00">08-21-2019</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：08-22-2019 08:05:52" itemprop="dateModified" datetime="2019-08-22T08:05:52+08:00">08-22-2019</time>
-              </span>
             
           
 
@@ -470,7 +456,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2.3k</span>
+              <span title="本文字数">6.3k</span>
             </span>
           
 
@@ -482,7 +468,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">2 分钟</span>
+              <span title="阅读时长">6 分钟</span>
             </span>
           
 
@@ -501,19 +487,46 @@
       
 
       
-        <h1 id="什么是-mathbf-KMP"><a href="#什么是-mathbf-KMP" class="headerlink" title="什么是 $\mathbf{KMP}$"></a>什么是 $\mathbf{KMP}$</h1><p>$KMP$ 算法是一种改进的字符串匹配算法，由$D.E.$ <strong>K</strong> $nuth$，$J.H.$ <strong>M</strong> $orris$和$V.R.$ <strong>P</strong> $ratt$提出的，因此人们称它为克努特—莫里斯—普拉特操作（简称 $KMP$ 算法）。 $KMP$ 算法的关键是利用匹配失败后的信息，尽量减少模式串与主串的匹配次数以达到快速匹配的目的。具体实现就是实现一个 $next()$ 函数，函数本身包含了模式串的局部匹配信息。时间复杂度 $\Theta(m+n)$ 。  </p>
-<p align="right">（From 百度百科）</p>
-
-<h1 id="mathbf-KMP-算法的思想"><a href="#mathbf-KMP-算法的思想" class="headerlink" title="$\mathbf{KMP}$ 算法的思想"></a>$\mathbf{KMP}$ 算法的思想</h1><p>首先我们考虑朴素的字符串匹配。通过两个指针分别指向文本串和模式串，如果失配，那么文本串指针会指向开始匹配的下一位，而模式串的指针则会指向串首。如下图：</p>
-<p><img src="/2019/07/14/浅谈KMP/kmp_1.png" alt></p>
-<p>但是我们可以发现，我们在第一次失配前已经知道文本串的前 $5$ 个字符，那么我们就可以找到一种更优的失配转移，如下图：</p>
-<p><img src="/2019/07/14/浅谈KMP/kmp_2.png" alt></p>
-<p>我们可以发现，我们可以找到模式串下标为 $n$ 时失配的更优失配转移，当且仅当模式串下标为 $[0,n]$ 的子串中的前缀等于后缀，如下图：</p>
-<p><img src="/2019/07/14/浅谈KMP/kmp_3.png" alt></p>
-<p>显然，子串中最长前缀等于最长后缀时，可以找到最优失配转移。由此得到 $KMP$ 算法的思路：预处理模式串，得到失配数组（ $fail$ 数组），再进行匹配。</p>
-<h1 id="如何预处理出-mathbf-fail-数组"><a href="#如何预处理出-mathbf-fail-数组" class="headerlink" title="如何预处理出 $\mathbf{fail}$ 数组"></a>如何预处理出 $\mathbf{fail}$ 数组</h1><p>从上文可以看出，我们需要找到最长的前缀等于后缀。建立数组 $fail[]$ 储存失配后2指针应跳转的位置。不难想到， $fail[0]=fail[1]=0$ 因为这两个位置失配后必须回到字符串起点。接下来我们可以不停的对当前失配的位置回跳 $fail$ 指针，直到匹配或跳到字符串首。代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">void get_fail(char s[])</span><br><span class="line">&#123;</span><br><span class="line">	fail[0]=0;</span><br><span class="line">	fail[1]=0;</span><br><span class="line">	for(register int i=1;i&lt;strlen(s);++i)</span><br><span class="line">	&#123;</span><br><span class="line">		int t=fail[i];</span><br><span class="line"></span><br><span class="line">		while(t&amp;&amp;s[t]!=s[i]) t=fail[t];</span><br><span class="line">		if(s[t]==s[i]) fail[i+1]=t+1;</span><br><span class="line">		else fail[i+1]=0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>同理，我们在 $kmp$ 的时候对两个字符串进行这样的操作。对比来看， $get\text{_}fail$ 操作其实就是模式串和文本串都是模式串的 $kmp$ 。代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">void kmp(char s[],char t[])</span><br><span class="line">&#123;</span><br><span class="line">	int now=0,len=strlen(t);</span><br><span class="line"></span><br><span class="line">	get_fail(t);</span><br><span class="line">	for(register int i=0;i&lt;strlen(s);++i)</span><br><span class="line">	&#123;</span><br><span class="line">		while(now&amp;&amp;s[i]!=t[now]) now=fail[now];</span><br><span class="line">		if(s[i]==t[now]) now++;</span><br><span class="line">		if(now==len)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;%d\n&quot;,i-len+1);</span><br><span class="line">			now=fail[now];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>$KMP$ 算法具有一种“最优历史处理”的性质，而这种性质也是基于 $KMP$ 的核心思想的。考虑前缀与后缀的关系使得其在匹配的时候不会反反复复地找。最后放上模板和 $std$ : <a href="https://www.luogu.org/problem/P3375" target="_blank" rel="noopener">P3375 【模板】KMP字符串匹配</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">// luogu-judger-enable-o2</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">string a,b;</span><br><span class="line">int fail[1000005];</span><br><span class="line"></span><br><span class="line">void get_fail(string s)</span><br><span class="line">&#123;</span><br><span class="line">	fail[0]=0;</span><br><span class="line">	fail[1]=0;</span><br><span class="line">	for(unsigned int i=1;i&lt;s.length();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int t=fail[i];</span><br><span class="line"></span><br><span class="line">		while(t&amp;&amp;s.at(t)!=s.at(i)) t=fail[t];</span><br><span class="line">		if(s.at(t)==s.at(i)) fail[i+1]=t+1;</span><br><span class="line">		else fail[i+1]=0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void kmp(string s1,string s2)</span><br><span class="line">&#123;</span><br><span class="line">	unsigned int now=0;</span><br><span class="line"></span><br><span class="line">	get_fail(s2);</span><br><span class="line">	for(unsigned int i=0;i&lt;s1.length();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		while(now&amp;&amp;s1.at(i)!=s2.at(now)) now=fail[now];</span><br><span class="line">		if(s1.at(i)==s2.at(now)) now++;</span><br><span class="line">		if(now==s2.length())</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;%d\n&quot;,i-s2.length()+1);</span><br><span class="line">			now=fail[now];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line"></span><br><span class="line">	a=&quot; &quot;+a;</span><br><span class="line">	kmp(a,b);</span><br><span class="line"></span><br><span class="line">	for(unsigned int i=1;i&lt;=b.length();i++) printf(&quot;%d &quot;,fail[i]);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="最短路算法"><a href="#最短路算法" class="headerlink" title="最短路算法"></a>最短路算法</h1><h2 id="mathbf-Floyd-算法"><a href="#mathbf-Floyd-算法" class="headerlink" title="$\mathbf{Floyd}$ 算法"></a>$\mathbf{Floyd}$ 算法</h2><h3 id="思路简介"><a href="#思路简介" class="headerlink" title="思路简介"></a>思路简介</h3><p>$Floyd$ 算法的思想本质是一个 $DP$ ，首先枚举中间点 $k$ ，对于每条路径<br>$i-&gt;j$ ，判断此路径若经过点 $k$<br>是否更优。状态转移方程为 $dis[i][j]=\min(dis[i][k]+dis[k][j],dis[i][j])$<br>$Floyd$ 算法枚举先中间点 $k$ ，再枚举路径起点 $i$ 和终点 $j$<br>，每层循环枚举次数都是 $n$ ，故算法时间复杂度为 $\Theta(V^3)$ 。</p>
+<h3 id="算法优劣"><a href="#算法优劣" class="headerlink" title="算法优劣"></a>算法优劣</h3><p>$Floyd$ 算法是最短路算法中唯一的一个多元最短路算法，在 $\Theta(V^3)$<br>的时间内可以求出任意两点的最短路。并且可以处理副边权，但不能处理负环。同时，由于时间复杂度较高，应用不是特别广。</p>
+<h2 id="mathbf-Dijkstra-算法"><a href="#mathbf-Dijkstra-算法" class="headerlink" title="$\mathbf{Dijkstra}$ 算法"></a>$\mathbf{Dijkstra}$ 算法</h2><h3 id="思路简介-1"><a href="#思路简介-1" class="headerlink" title="思路简介"></a>思路简介</h3><p>$Dijkstra$ 算法的思路是维护一个点集 $\mathbb{U}$<br>,点集内的点都是已经确定最短路的点。建立数组 $dis[]$<br>表示从源点出发到达每个点的最短路长度，每次从图中寻找离该集合最近的点 $v$<br>，并确定它的最短路长度 $dis[v]=dis[u]+w(u,v)$ （ $u$ 为点集中离 $v$<br>最近的点），然后将该点加入点集 $\mathbb{U}$ （也就是所谓的松弛操作）。\<br>$Dijkstra$ 算法需要进行 $n$<br>次松弛操作（每个点一次），每次松弛操作需要枚举所有点来寻找离点集最近的点，故算法时间复杂度为<br>$\Theta(V^2)$ 。\<br>考虑优化，我们需要在所有点中寻找离点集最近且不在点集中的点。换而言之，我们要在一个集合中寻找最小值。很容易联想到利用堆这种数据结构优化<br>$Dijkstra$ 算法。这样每次寻找最小值的时间复杂度降为 $\Theta(1)$<br>，每次加入点集后将相邻点插入堆中时间复杂度为 $\Theta(e\cdot \log_2 V)$ （ $e$<br>为该点边数），于是最后时间复杂度降为 $\Theta((V+E)\cdot \log_2 V)$ 。</p>
+<h3 id="算法优劣-1"><a href="#算法优劣-1" class="headerlink" title="算法优劣"></a>算法优劣</h3><p>$Dijkstra$ 算法是当前 $\mathcal{OI}$<br>中最主流的最短路算法，其应用范围广，基本不会被卡，但不能处理带负边权的情况。</p>
+<h2 id="mathbf-Bellman-Ford-算法"><a href="#mathbf-Bellman-Ford-算法" class="headerlink" title="$\mathbf{Bellman-Ford}$ 算法"></a>$\mathbf{Bellman-Ford}$ 算法</h2><h3 id="思路简介-2"><a href="#思路简介-2" class="headerlink" title="思路简介"></a>思路简介</h3><p>$Bellman-Ford$ 算法最初的思路仍然像一个 $DP$ ，数组 $dis[i][j]$<br>代表从源点出发经过最多 $j$ 条边到达 $i$<br>点的最短路长度。状态转移方程显然$dis[i][j]=\min(dis[i][j-1],\min\left\{dis[k][j-1]+w(i,k)\right\})$<br>考虑对每个点的松弛操作改为对每条边进行松弛操作，每轮松弛操作中对每条边<br>$u-v$ 都进行一次松弛 $dis[v]=\min(dis[v],dis[u]+w(u,v))$ , $n-1$<br>轮松弛后即可得出源点到每个点的最短路。如果接下来还能对边进行松弛，则说明图中存在负环，最短路为负无穷。因为没有负环的图中最短路最多经过<br>$n-1$ 条边（每个点经过一次），如果一条最短路经过了多余 $n-1$<br>条边，则此图必定有负环。由上述思路，经过 $n-1$ 轮松弛，每轮松弛 $m$<br>条边，时间复杂度为 $\Theta(V\cdot E)$ 。</p>
+<h3 id="算法优劣-2"><a href="#算法优劣-2" class="headerlink" title="算法优劣"></a>算法优劣</h3><p>$Bellman-Ford$<br>算法可以在有负边权的图中找出最短路，并且可以判断图中有没有负环。其时间复杂度与边数有关，在稀疏图中表现优异，但在稠密图中（边数在<br>$1e6$ 左右）就会被卡。</p>
+<h2 id="mathbf-SPFA-算法"><a href="#mathbf-SPFA-算法" class="headerlink" title="$\mathbf{SPFA}$ 算法"></a>$\mathbf{SPFA}$ 算法</h2><h3 id="思路简介-3"><a href="#思路简介-3" class="headerlink" title="思路简介"></a>思路简介</h3><p>$SPFA$ 算法的全称是 $Shortest\quad Path\quad Faster\quad Algorithm$ ，其本质是<br>$Bellman-Ford$<br>的队列优化。首先把起点入队，同时标记入队，然后重复以下操作直到队列为空：\<br>  -取出队首并标记出队。\<br>  -遍历与其相连的边，进行松弛操作。\<br>  -如果与其相连的点没有在队列中，就将其入队，并标记。\<br>如果有一个点入队次数超过 $n-1$ ，即代表有边被松弛超过 $n-1$<br>次，说明图中有负环。考虑每个点都入队 $n-1$ 次，这种情况就和朴素的<br>$Bellman-Ford$ 算法时间复杂度一致，为 $\Theta(V\cdot E)$ 。</p>
+<h3 id="算法优劣-3"><a href="#算法优劣-3" class="headerlink" title="算法优劣"></a>算法优劣</h3><p>$SPFA$ 曾一度被证明复杂度为 $\Theta(k\cdot E)$ （其中 $k$<br>为小常数），后证明此复杂度是错误的，所以 $SPFA$ 曾一度被卡。后有 $LLL$<br>， $mcfx$ 优化， $SLF$ ， $SLF$带容错， $SLF-swap$<br>，等一系列神仙优化，但最终还是可以被卡掉。但 $SPFA$<br>可以在随机数据的情况下更快判断负环，弥补的 $Dijkstra$<br>算法不能处理负环，负边权的缺陷。</p>
+<h1 id="最小生成树算法"><a href="#最小生成树算法" class="headerlink" title="最小生成树算法"></a>最小生成树算法</h1><h2 id="mathbf-Prim-算法"><a href="#mathbf-Prim-算法" class="headerlink" title="$\mathbf{Prim}$ 算法"></a>$\mathbf{Prim}$ 算法</h2><h3 id="思路简介-4"><a href="#思路简介-4" class="headerlink" title="思路简介"></a>思路简介</h3><p>同 $Dijkstra$ 算法一样， $Prim$<br>算法的思路是也维护一个点集，点集内的点都是已经在最小生成树上的点。每次从图中寻找离该集合最近的点<br>$v$ ，加入集合，并将边 $e(u,v)$ （ $u$ 为点集中离 $v$<br>最近的点）加入最小生成树。同 $Dijkstra$ 算法一样， $Prim$<br>算法的时间复杂度也是 $\Theta(V^2)$ 。同理，也可以用堆优化至<br>$\Theta((V+E)\cdot \log_2 V)$</p>
+<h3 id="算法优劣-4"><a href="#算法优劣-4" class="headerlink" title="算法优劣"></a>算法优劣</h3><p>从时间复杂度的角度看，朴素的 $Prim$<br>算法与边数完全无关，适用于稠密图。优化后主要也是与点数有关。总体来看，<br>$Prim$ 算法适用于稠密图。</p>
+<h2 id="mathbf-Kruskal-算法"><a href="#mathbf-Kruskal-算法" class="headerlink" title="$\mathbf{Kruskal}$ 算法"></a>$\mathbf{Kruskal}$ 算法</h2><h3 id="思路简介-5"><a href="#思路简介-5" class="headerlink" title="思路简介"></a>思路简介</h3><p>$Kruskal$<br>算法使用的数据结构”并查集”，它的思路是把边从小到大排序，然后对每条边检查两个端点是否在一个并查集中，若不在一个并查集中，则将其合并，将该边加入最小生成树，直到加入<br>$n-1$<br>条边后终止。时间复杂度为排序的时间加上对每条边进行判断，合并的时间，均摊时间复杂度为<br>$\Theta(E\cdot \log_2 E)$ 。</p>
+<h3 id="算法优劣-5"><a href="#算法优劣-5" class="headerlink" title="算法优劣"></a>算法优劣</h3><p>于上文的 $Prim$ 算法相比， $Kruskal$<br>算法复杂度只于边数有关，适用于稀疏图，同样也是最主流的最小生成树算法。</p>
+<h1 id="有向图算法"><a href="#有向图算法" class="headerlink" title="有向图算法"></a>有向图算法</h1><h2 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h2><p>拓扑排序是在有向图中寻找一个可行的拓扑序，使得每个点的前驱在该序列中都在这个点的前面。考虑朴素做法，循环<br>$n$ 次，每次找到一个没有在序列答案序列中且入度为 $0$<br>的点，把它连出的边的每一个终点入度 $-1$<br>，然后加入答案。此做法时间复杂度易得为 $\Theta(V^2)$ 。\<br>考虑优化。首先建立一个队列，把图中入度为 $0$<br>的点入队。然后把队首弹出，放入答案序列，并且把该点连出的边的每一个终点入度<br>$-1$ ，同时把入度为 $0$<br>的终点加入队列，重复此过程直到队列为空。如果答案序列长度不足 $n$<br>,则证明该有向图有环。此做法的时间复杂度为 $\Theta(V+E)$ 。</p>
+<h2 id="mathbf-Tarjan-算法"><a href="#mathbf-Tarjan-算法" class="headerlink" title="$\mathbf{Tarjan}$ 算法"></a>$\mathbf{Tarjan}$ 算法</h2><p>$Tarjan$<br>算法是有向图的终极算法，有向图中可用于求强连通分量，还能缩点。具体思路是利用<br>$dfs$ 序的性质，在 $dfs$ 回溯是进行求解。首先建立数组 $dfn[],<br>    low[]$ ，分别代表 $dfs$ 序和 $dfs$ 序中可以回溯到的最早位置。在<br>$dfs$ 的时候处理出两个数组，就可以利用 $dfs$<br>序的性质求解。这样每个点，每条边都仅访问一次，时间复杂度为 $\Theta(V+E)$<br>。</p>
+<h3 id="求强连通分量"><a href="#求强连通分量" class="headerlink" title="求强连通分量"></a>求强连通分量</h3><p>显然，在 $dfs$<br>序中，如果子孙能有一条边连向祖先，那么从祖先到这个子孙之间的所有点都在一个强连通图中。当一个点能够回溯到的最早位置为自己，即<br>$dfn[u]=low[u]$<br>时，这个点以及可以回溯到它的最后子孙之间的点就处于一个强连通分量中。此时可以想到使用栈来处理。建立一个栈，<br>$dfs$<br>时将点压入其中，然后当回溯到一个点，找到强连通分量后就将这之间的点全部弹出，然后放入同一个强连通分量中。</p>
+<h2 id="缩点"><a href="#缩点" class="headerlink" title="缩点"></a>缩点</h2><p>同上，将一个强连通分量缩成新图中的一个点即可。接下来按题目要求在 $DAG$<br>上操作。</p>
+<h1 id="无向图算法"><a href="#无向图算法" class="headerlink" title="无向图算法"></a>无向图算法</h1><h2 id="mathbf-Tarjan-算法-1"><a href="#mathbf-Tarjan-算法-1" class="headerlink" title="$\mathbf{Tarjan}$ 算法"></a>$\mathbf{Tarjan}$ 算法</h2><p>你没有看错！又是它！无向图中， $Tarjan$<br>算法可以用来求双连通分量，割点，桥。思路和有向图差不多，时间复杂度也一致。</p>
+<h3 id="割点"><a href="#割点" class="headerlink" title="割点"></a>割点</h3><p>割点指的是去掉这个点对图的连通性有影响。考虑一个点如果是割点，那么它的所有子孙能够回溯到的最早位置一定都是自己的子孙，即对于所有子孙<br>$v$ ,都有 $low[v]&gt;=dfn[u]$ 。</p>
+<h3 id="桥"><a href="#桥" class="headerlink" title="桥"></a>桥</h3><p>与割点类似，桥指的是去掉这条边后对图的连通性有影响。同上理，如果一个点对于所有子孙<br>$v$ ,都有 $low[v]&gt;dfn[u]$ ，那么边 $e(u,v)$ 为桥。</p>
+<h3 id="点双连通分量"><a href="#点双连通分量" class="headerlink" title="点双连通分量"></a>点双连通分量</h3><p>无向图中，没有割点的一个极大连通分量就是一个点双连通分量，求法与割点类似。</p>
+<h3 id="边双连通分量"><a href="#边双连通分量" class="headerlink" title="边双连通分量"></a>边双连通分量</h3><p>同理，无向图中，没有桥的一个极大连通分量就是一个边双连通分量，求法与桥类似。</p>
+<h1 id="二分图"><a href="#二分图" class="headerlink" title="二分图"></a>二分图</h1><h2 id="匈牙利算法"><a href="#匈牙利算法" class="headerlink" title="匈牙利算法"></a>匈牙利算法</h2><p>如果一个图中所有点可以被分成两个非空点集 $\mathbb{U}$ ， $\mathbb{V}$<br>，且 $\mathbb{U}\cap \mathbb{V}=\varnothing$<br>，其中同一属于点集中的点不互相连边，那么这个图就是二分图。\<br>任意两条边都没有公共顶点的一个边集称为二分图的一组匹配。包含边数最多的一组匹配称为二分图最大匹配。求解二分图最大匹配，可以用匈牙利算法。\<br>一组匹配 $\mathbb{E}$ ，对于任意一条边 $e$ ，若 $e\in \mathbb{E}$ 则称<br>$e$ 为匹配边，否则称 $e$<br>为非匹配边。所有匹配边的两个端点都称为匹配点，其余点称为非匹配点。\<br>匈牙利算法的思路是在图中寻找增广路，增广路是指的一条从非匹配点到非匹配点的路径，其中匹配边与非匹配边在路径上交替出现。增广路在对路径上所有边取反（匹配边变成非匹配边，非匹配边变成匹配边），可以使匹配边条数<br>$+1$ 。\<br>匈牙利算法寻找增广路的方法是依次尝试给每一个结点 $u\in \mathbb{U}$<br>寻找一个匹配的结点 $v\in \mathbb{V}$ ，其中 $v$ 满足以下条件之一：</p>
+<ul>
+<li>$v$ 是非匹配点。</li>
+<li>$v$ 已经与 $u’$ 匹配，但 $u’$ 可以找到另一个点 $v’$ 与之匹配。\<br>对于每个点都要进行一次匹配，每次匹配的最坏情况是遍历所有的边，所以时间复杂度为<br>$\Theta(V\cdot E)$ 。</li>
+</ul>
+<h1 id="网络流"><a href="#网络流" class="headerlink" title="网络流"></a>网络流</h1><p>一个网络指的是一张有向图<br>$\mathbf{G}=(\mathbb{V},\mathbb{E})$，每条边的权值称为边的容量。图中还有两个特殊结点<br>$s$ ， $t$ ，称为源点和汇点。定义流量 $f(u,v)$<br>为实数函数，且满足以下条件：\<br>  -对于每条边 $e(u,v)\in \mathbb{E}$，都有 $f(u,v)\leq w(u,v)$ 。\<br>  -取 $\forall x\in \mathbb{V},x\neq s,x\neq t$ ，都有<br>$\sum_{e(u,x)\in \mathbb{E}} f(u,x)=\sum_{e(x,v)\in \mathbb{E}} f(x,v)$<br>。\<br>  -对于任意流量 $f(u,v)$ ，都有 $f(u,v)=-f(v,u)$ 。\<br>对于一条边 $e(u,v)\in \mathbb{E}$ ， $w(u,v)-f(u,v)$<br>就是这条边的残量。一个网络中所有残量组成的新的网络称为残量网络。\<br>网络的流量就是指的 $f(s,t)$ 。一个网络最大的合法流量称为网络最大流。</p>
+<h2 id="mathbf-EK-算法"><a href="#mathbf-EK-算法" class="headerlink" title="$\mathbf{EK}$ 算法"></a>$\mathbf{EK}$ 算法</h2><h2 id="思路简介-6"><a href="#思路简介-6" class="headerlink" title="思路简介"></a>思路简介</h2><p>求解网络最大流，一种方法是用 $EK$ 算法求解。 $EK$<br>算法的思路与匈牙利算法差不多，也是通过寻找增广路。此时增广路的定义为一条残量均大于<br>$0$ 的路径。具体操作为从 $s$ 开始向外 $bfs$ 只走残量大于 $0$<br>的边，直到找到 $t$ 为止。然后计算最小残量 $minf$ ，把增广路上的边边权<br>$-minf$ ，然后把反向边边权 $+minf$ 直到找不到增广路。此算法时间复杂度<br>$\Theta(V\cdot E^2)$</p>
+<h3 id="算法优劣-6"><a href="#算法优劣-6" class="headerlink" title="算法优劣"></a>算法优劣</h3><p>此算法虽然时间复杂度较高，但很难跑满。一般在稀疏图中跑网络流会用 $EK$<br>算法。</p>
+<h2 id="mathbf-Dinic-算法"><a href="#mathbf-Dinic-算法" class="headerlink" title="$\mathbf{Dinic}$ 算法"></a>$\mathbf{Dinic}$ 算法</h2><h3 id="思路简介-7"><a href="#思路简介-7" class="headerlink" title="思路简介"></a>思路简介</h3><p>更多的时候，求解网络流会用 $Dinic$ 算法。 $Dinic$ 算法的主要特点是对图用<br>$bfs$ 进行分层，再用 $dfs$<br>寻找增广路，每次寻找增广路的时候只往下一层找，保证了 $dfs$<br>的迭代次数不多。同时还可以加入各种剪枝。朴素的 $Dinic$ 算法时间复杂度为<br>$\Theta(V^2\cdot E)$ 。</p>
+<h3 id="算法优劣-7"><a href="#算法优劣-7" class="headerlink" title="算法优劣"></a>算法优劣</h3><p>乍一看，此算法时间复杂度和 $EK$<br>算法差不多，但实际应用中一般处理的都是稠密图，边数远大于点数，此时用<br>$Dinic$ 是一个不错的选择。</p>
+<h1 id="其他建图问题"><a href="#其他建图问题" class="headerlink" title="其他建图问题"></a>其他建图问题</h1><h2 id="差分约束系统"><a href="#差分约束系统" class="headerlink" title="差分约束系统"></a>差分约束系统</h2><p>一个由 $n$ 个变量和 $m$ 个形如 $a_i-a_j\leq k$<br>的约束条件组成的系统称为差分约束系统。可以将约束条件转化为形如<br>$dis[i]\leq dis[j]+w(i,j)$ 的图论条件。\<br>显而易见，可以转化为图论问题。对于每个条件 $i+j\leq k$ ，建立一条边<br>$w(i,j)=k$ 。新建虚拟源点，源点连向所有点的边权为 $0$<br>.在图上跑最短路，最终 $dis[]$ 即为一组可行解。</p>
+<h2 id="mathbf-2-sat-问题"><a href="#mathbf-2-sat-问题" class="headerlink" title="$\mathbf{2-sat}$ 问题"></a>$\mathbf{2-sat}$ 问题</h2><p>$2-sat$ 问题是一种特殊的逻辑判断问题。给定 $n$ 个变量和 $m$<br>个限制条件，每个变量有一个值 $val_i\in\left\{0,1\right\}$<br>，且限制条件均为形如\<br>$(\neg)val_i(opt)(\neg)val_j$<br>等对两个变量的值的限制。由于每个变量都只有两个状态，所以考虑建图是把一个变量<br>$val_i$ 拆成两个点 $i$ ， $i’$ ，分别表示这个点取 $0$ 还是取 $1$<br>，然后考虑连边。每条边 $e(u,v)$ 表示如果点 $u$ 选择的那么就必须选 $v$<br>。最后可以发现，如果选择了一个点，那么也要选择和它在同一个强连通分量里的点。所以我们可以通过判断对于每个变量<br>$val_i$ ， $i$ 和 $i’$ 是否在同一个强连通分量里。如果是，那么这个<br>$2-sat$ 问题就无解，否则就可以输出 $i$ 和 $i’$<br>中拓扑序较大的一个形成一组解。连边的方式主要有以下几种：</p>
+<ul>
+<li>$val_i\oplus val_j=1$ 即 $i$ ， $j$<br>必须选一个但不能同时选。连边方式为 $i-&gt;j’,j-&gt;i’$ 。</li>
+<li>$val_i\oplus val_j=0$ 即 $i$ ， $j$ 要么都选要么都不选。连边方式为<br>$i-&gt;j,j-&gt;i,i’-&gt;j’,j’-&gt;i’$ 。</li>
+<li>$val_i|val_j=1$ 即 $i$ ， $j$ 至少选一个。连边方式为 $i’-&gt;j,j’-&gt;i$<br>。</li>
+<li>$i$ 即 $i$ 必须选。连边方式为 $i’-&gt;i$ 。</li>
+<li>$\neg i$ 即 $i$ 不能选。连边方式为 $i-&gt;i’$ 。\<br>此方法每条边都至多经过一次，故时间复杂度为 $\Theta(E)$ 。</li>
+</ul>
 
       
     </div>
@@ -548,7 +561,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://big-showers.github.io/2019/07/14/浅谈KMP/" title="浅谈KMP">https://big-showers.github.io/2019/07/14/浅谈KMP/</a>
+    <a href="https://big-showers.github.io/2019/08/21/图论总结/" title="图论总结">https://big-showers.github.io/2019/08/21/图论总结/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -564,7 +577,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/String-Algorithm/" rel="tag"># String Algorithm</a>
+            <a href="/tags/Summarize/" rel="tag"># Summarize</a>
           
         </div>
       
@@ -589,8 +602,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/10/浅谈Splay/" rel="next" title="浅谈Splay">
-                <i class="fa fa-chevron-left"></i> 浅谈Splay
+              <a href="/2019/08/21/数论总结/" rel="next" title="数论总结">
+                <i class="fa fa-chevron-left"></i> 数论总结
               </a>
             
           </div>
@@ -599,8 +612,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/21/数论总结/" rel="prev" title="数论总结">
-                数论总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/21/数据结构总结/" rel="prev" title="数据结构总结">
+                数据结构总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -773,7 +786,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是-mathbf-KMP"><span class="nav-number">1.</span> <span class="nav-text">什么是 $\mathbf{KMP}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathbf-KMP-算法的思想"><span class="nav-number">2.</span> <span class="nav-text">$\mathbf{KMP}$ 算法的思想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何预处理出-mathbf-fail-数组"><span class="nav-number">3.</span> <span class="nav-text">如何预处理出 $\mathbf{fail}$ 数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#最短路算法"><span class="nav-number">1.</span> <span class="nav-text">最短路算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-Floyd-算法"><span class="nav-number">1.1.</span> <span class="nav-text">$\mathbf{Floyd}$ 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路简介"><span class="nav-number">1.1.1.</span> <span class="nav-text">思路简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法优劣"><span class="nav-number">1.1.2.</span> <span class="nav-text">算法优劣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-Dijkstra-算法"><span class="nav-number">1.2.</span> <span class="nav-text">$\mathbf{Dijkstra}$ 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路简介-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">思路简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法优劣-1"><span class="nav-number">1.2.2.</span> <span class="nav-text">算法优劣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-Bellman-Ford-算法"><span class="nav-number">1.3.</span> <span class="nav-text">$\mathbf{Bellman-Ford}$ 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路简介-2"><span class="nav-number">1.3.1.</span> <span class="nav-text">思路简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法优劣-2"><span class="nav-number">1.3.2.</span> <span class="nav-text">算法优劣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-SPFA-算法"><span class="nav-number">1.4.</span> <span class="nav-text">$\mathbf{SPFA}$ 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路简介-3"><span class="nav-number">1.4.1.</span> <span class="nav-text">思路简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法优劣-3"><span class="nav-number">1.4.2.</span> <span class="nav-text">算法优劣</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#最小生成树算法"><span class="nav-number">2.</span> <span class="nav-text">最小生成树算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-Prim-算法"><span class="nav-number">2.1.</span> <span class="nav-text">$\mathbf{Prim}$ 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路简介-4"><span class="nav-number">2.1.1.</span> <span class="nav-text">思路简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法优劣-4"><span class="nav-number">2.1.2.</span> <span class="nav-text">算法优劣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-Kruskal-算法"><span class="nav-number">2.2.</span> <span class="nav-text">$\mathbf{Kruskal}$ 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路简介-5"><span class="nav-number">2.2.1.</span> <span class="nav-text">思路简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法优劣-5"><span class="nav-number">2.2.2.</span> <span class="nav-text">算法优劣</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#有向图算法"><span class="nav-number">3.</span> <span class="nav-text">有向图算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#拓扑排序"><span class="nav-number">3.1.</span> <span class="nav-text">拓扑排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-Tarjan-算法"><span class="nav-number">3.2.</span> <span class="nav-text">$\mathbf{Tarjan}$ 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#求强连通分量"><span class="nav-number">3.2.1.</span> <span class="nav-text">求强连通分量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缩点"><span class="nav-number">3.3.</span> <span class="nav-text">缩点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#无向图算法"><span class="nav-number">4.</span> <span class="nav-text">无向图算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-Tarjan-算法-1"><span class="nav-number">4.1.</span> <span class="nav-text">$\mathbf{Tarjan}$ 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#割点"><span class="nav-number">4.1.1.</span> <span class="nav-text">割点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#桥"><span class="nav-number">4.1.2.</span> <span class="nav-text">桥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点双连通分量"><span class="nav-number">4.1.3.</span> <span class="nav-text">点双连通分量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边双连通分量"><span class="nav-number">4.1.4.</span> <span class="nav-text">边双连通分量</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二分图"><span class="nav-number">5.</span> <span class="nav-text">二分图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#匈牙利算法"><span class="nav-number">5.1.</span> <span class="nav-text">匈牙利算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络流"><span class="nav-number">6.</span> <span class="nav-text">网络流</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-EK-算法"><span class="nav-number">6.1.</span> <span class="nav-text">$\mathbf{EK}$ 算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路简介-6"><span class="nav-number">6.2.</span> <span class="nav-text">思路简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#算法优劣-6"><span class="nav-number">6.2.1.</span> <span class="nav-text">算法优劣</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-Dinic-算法"><span class="nav-number">6.3.</span> <span class="nav-text">$\mathbf{Dinic}$ 算法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#思路简介-7"><span class="nav-number">6.3.1.</span> <span class="nav-text">思路简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算法优劣-7"><span class="nav-number">6.3.2.</span> <span class="nav-text">算法优劣</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他建图问题"><span class="nav-number">7.</span> <span class="nav-text">其他建图问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#差分约束系统"><span class="nav-number">7.1.</span> <span class="nav-text">差分约束系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-2-sat-问题"><span class="nav-number">7.2.</span> <span class="nav-text">$\mathbf{2-sat}$ 问题</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -105,22 +105,18 @@
 
 
 
-  <meta name="description" content="什么是 $\mathbf{KMP}$$KMP$ 算法是一种改进的字符串匹配算法，由$D.E.$ K $nuth$，$J.H.$ M $orris$和$V.R.$ P $ratt$提出的，因此人们称它为克努特—莫里斯—普拉特操作（简称 $KMP$ 算法）。 $KMP$ 算法的关键是利用匹配失败后的信息，尽量减少模式串与主串的匹配次数以达到快速匹配的目的。具体实现就是实现一个 $next()$ 函数，">
-<meta name="keywords" content="String Algorithm">
+  <meta name="description" content="基础数据结构基础数据结构包括数组，链表，栈，队列等，过于基础，再次不在赘述。 并查集普通并查集并查集是一种树型的数据结构，用于处理一些不相交集合的合并及查询问题。常常在使用中以森林来表示。首先把每个点指向的父亲结点初始化为自己，然后根据要求进行查找和合并。合并的时间复杂度是$\Theta(1)$ 的，而查找的时间复杂度与链长有关，最坏情况下是 $\Theta(n)$的。 路径压缩可以发现，查找时的">
+<meta name="keywords" content="Summarize">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈KMP">
-<meta property="og:url" content="https://big-showers.github.io/2019/07/14/浅谈KMP/index.html">
+<meta property="og:title" content="数据结构总结">
+<meta property="og:url" content="https://big-showers.github.io/2019/08/21/数据结构总结/index.html">
 <meta property="og:site_name" content="BIG-Showers&#39; Blog">
-<meta property="og:description" content="什么是 $\mathbf{KMP}$$KMP$ 算法是一种改进的字符串匹配算法，由$D.E.$ K $nuth$，$J.H.$ M $orris$和$V.R.$ P $ratt$提出的，因此人们称它为克努特—莫里斯—普拉特操作（简称 $KMP$ 算法）。 $KMP$ 算法的关键是利用匹配失败后的信息，尽量减少模式串与主串的匹配次数以达到快速匹配的目的。具体实现就是实现一个 $next()$ 函数，">
+<meta property="og:description" content="基础数据结构基础数据结构包括数组，链表，栈，队列等，过于基础，再次不在赘述。 并查集普通并查集并查集是一种树型的数据结构，用于处理一些不相交集合的合并及查询问题。常常在使用中以森林来表示。首先把每个点指向的父亲结点初始化为自己，然后根据要求进行查找和合并。合并的时间复杂度是$\Theta(1)$ 的，而查找的时间复杂度与链长有关，最坏情况下是 $\Theta(n)$的。 路径压缩可以发现，查找时的">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://big-showers.github.io/2019/07/14/浅谈KMP/kmp_1.png">
-<meta property="og:image" content="https://big-showers.github.io/2019/07/14/浅谈KMP/kmp_2.png">
-<meta property="og:image" content="https://big-showers.github.io/2019/07/14/浅谈KMP/kmp_3.png">
-<meta property="og:updated_time" content="2019-08-22T00:05:52.000Z">
+<meta property="og:updated_time" content="2019-08-21T12:55:50.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浅谈KMP">
-<meta name="twitter:description" content="什么是 $\mathbf{KMP}$$KMP$ 算法是一种改进的字符串匹配算法，由$D.E.$ K $nuth$，$J.H.$ M $orris$和$V.R.$ P $ratt$提出的，因此人们称它为克努特—莫里斯—普拉特操作（简称 $KMP$ 算法）。 $KMP$ 算法的关键是利用匹配失败后的信息，尽量减少模式串与主串的匹配次数以达到快速匹配的目的。具体实现就是实现一个 $next()$ 函数，">
-<meta name="twitter:image" content="https://big-showers.github.io/2019/07/14/浅谈KMP/kmp_1.png">
+<meta name="twitter:title" content="数据结构总结">
+<meta name="twitter:description" content="基础数据结构基础数据结构包括数组，链表，栈，队列等，过于基础，再次不在赘述。 并查集普通并查集并查集是一种树型的数据结构，用于处理一些不相交集合的合并及查询问题。常常在使用中以森林来表示。首先把每个点指向的父亲结点初始化为自己，然后根据要求进行查找和合并。合并的时间复杂度是$\Theta(1)$ 的，而查找的时间复杂度与链长有关，最坏情况下是 $\Theta(n)$的。 路径压缩可以发现，查找时的">
 
 
 
@@ -128,7 +124,7 @@
 
   
   
-  <link rel="canonical" href="https://big-showers.github.io/2019/07/14/浅谈KMP/">
+  <link rel="canonical" href="https://big-showers.github.io/2019/08/21/数据结构总结/">
 
 
 
@@ -138,7 +134,7 @@
   };
 </script>
 
-  <title>浅谈KMP | BIG-Showers' Blog</title>
+  <title>数据结构总结 | BIG-Showers' Blog</title>
   
 
 
@@ -378,7 +374,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://big-showers.github.io/2019/07/14/浅谈KMP/">
+    <link itemprop="mainEntityOfPage" href="https://big-showers.github.io/2019/08/21/数据结构总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="LWQ">
@@ -395,7 +391,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">浅谈KMP
+          <h1 class="post-title" itemprop="name headline">数据结构总结
 
               
             
@@ -421,23 +417,13 @@
                 
               
 
-              <time title="创建时间：07-14-2019 14:28:57" itemprop="dateCreated datePublished" datetime="2019-07-14T14:28:57+08:00">07-14-2019</time>
+              <time title="创建时间：08-21-2019 20:39:14 / 修改时间：20:55:50" itemprop="dateCreated datePublished" datetime="2019-08-21T20:39:14+08:00">08-21-2019</time>
             </span>
           
 
           
             
 
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：08-22-2019 08:05:52" itemprop="dateModified" datetime="2019-08-22T08:05:52+08:00">08-22-2019</time>
-              </span>
             
           
 
@@ -470,7 +456,7 @@
               
                 <span class="post-meta-item-text">本文字数：</span>
               
-              <span title="本文字数">2.3k</span>
+              <span title="本文字数">6.6k</span>
             </span>
           
 
@@ -482,7 +468,7 @@
               
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
               
-              <span title="阅读时长">2 分钟</span>
+              <span title="阅读时长">6 分钟</span>
             </span>
           
 
@@ -501,19 +487,57 @@
       
 
       
-        <h1 id="什么是-mathbf-KMP"><a href="#什么是-mathbf-KMP" class="headerlink" title="什么是 $\mathbf{KMP}$"></a>什么是 $\mathbf{KMP}$</h1><p>$KMP$ 算法是一种改进的字符串匹配算法，由$D.E.$ <strong>K</strong> $nuth$，$J.H.$ <strong>M</strong> $orris$和$V.R.$ <strong>P</strong> $ratt$提出的，因此人们称它为克努特—莫里斯—普拉特操作（简称 $KMP$ 算法）。 $KMP$ 算法的关键是利用匹配失败后的信息，尽量减少模式串与主串的匹配次数以达到快速匹配的目的。具体实现就是实现一个 $next()$ 函数，函数本身包含了模式串的局部匹配信息。时间复杂度 $\Theta(m+n)$ 。  </p>
-<p align="right">（From 百度百科）</p>
-
-<h1 id="mathbf-KMP-算法的思想"><a href="#mathbf-KMP-算法的思想" class="headerlink" title="$\mathbf{KMP}$ 算法的思想"></a>$\mathbf{KMP}$ 算法的思想</h1><p>首先我们考虑朴素的字符串匹配。通过两个指针分别指向文本串和模式串，如果失配，那么文本串指针会指向开始匹配的下一位，而模式串的指针则会指向串首。如下图：</p>
-<p><img src="/2019/07/14/浅谈KMP/kmp_1.png" alt></p>
-<p>但是我们可以发现，我们在第一次失配前已经知道文本串的前 $5$ 个字符，那么我们就可以找到一种更优的失配转移，如下图：</p>
-<p><img src="/2019/07/14/浅谈KMP/kmp_2.png" alt></p>
-<p>我们可以发现，我们可以找到模式串下标为 $n$ 时失配的更优失配转移，当且仅当模式串下标为 $[0,n]$ 的子串中的前缀等于后缀，如下图：</p>
-<p><img src="/2019/07/14/浅谈KMP/kmp_3.png" alt></p>
-<p>显然，子串中最长前缀等于最长后缀时，可以找到最优失配转移。由此得到 $KMP$ 算法的思路：预处理模式串，得到失配数组（ $fail$ 数组），再进行匹配。</p>
-<h1 id="如何预处理出-mathbf-fail-数组"><a href="#如何预处理出-mathbf-fail-数组" class="headerlink" title="如何预处理出 $\mathbf{fail}$ 数组"></a>如何预处理出 $\mathbf{fail}$ 数组</h1><p>从上文可以看出，我们需要找到最长的前缀等于后缀。建立数组 $fail[]$ 储存失配后2指针应跳转的位置。不难想到， $fail[0]=fail[1]=0$ 因为这两个位置失配后必须回到字符串起点。接下来我们可以不停的对当前失配的位置回跳 $fail$ 指针，直到匹配或跳到字符串首。代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">void get_fail(char s[])</span><br><span class="line">&#123;</span><br><span class="line">	fail[0]=0;</span><br><span class="line">	fail[1]=0;</span><br><span class="line">	for(register int i=1;i&lt;strlen(s);++i)</span><br><span class="line">	&#123;</span><br><span class="line">		int t=fail[i];</span><br><span class="line"></span><br><span class="line">		while(t&amp;&amp;s[t]!=s[i]) t=fail[t];</span><br><span class="line">		if(s[t]==s[i]) fail[i+1]=t+1;</span><br><span class="line">		else fail[i+1]=0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>同理，我们在 $kmp$ 的时候对两个字符串进行这样的操作。对比来看， $get\text{_}fail$ 操作其实就是模式串和文本串都是模式串的 $kmp$ 。代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">void kmp(char s[],char t[])</span><br><span class="line">&#123;</span><br><span class="line">	int now=0,len=strlen(t);</span><br><span class="line"></span><br><span class="line">	get_fail(t);</span><br><span class="line">	for(register int i=0;i&lt;strlen(s);++i)</span><br><span class="line">	&#123;</span><br><span class="line">		while(now&amp;&amp;s[i]!=t[now]) now=fail[now];</span><br><span class="line">		if(s[i]==t[now]) now++;</span><br><span class="line">		if(now==len)</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;%d\n&quot;,i-len+1);</span><br><span class="line">			now=fail[now];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h1 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h1><p>$KMP$ 算法具有一种“最优历史处理”的性质，而这种性质也是基于 $KMP$ 的核心思想的。考虑前缀与后缀的关系使得其在匹配的时候不会反反复复地找。最后放上模板和 $std$ : <a href="https://www.luogu.org/problem/P3375" target="_blank" rel="noopener">P3375 【模板】KMP字符串匹配</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">// luogu-judger-enable-o2</span><br><span class="line">#include &lt;cstdio&gt;</span><br><span class="line">#include &lt;string&gt;</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">string a,b;</span><br><span class="line">int fail[1000005];</span><br><span class="line"></span><br><span class="line">void get_fail(string s)</span><br><span class="line">&#123;</span><br><span class="line">	fail[0]=0;</span><br><span class="line">	fail[1]=0;</span><br><span class="line">	for(unsigned int i=1;i&lt;s.length();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		int t=fail[i];</span><br><span class="line"></span><br><span class="line">		while(t&amp;&amp;s.at(t)!=s.at(i)) t=fail[t];</span><br><span class="line">		if(s.at(t)==s.at(i)) fail[i+1]=t+1;</span><br><span class="line">		else fail[i+1]=0;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void kmp(string s1,string s2)</span><br><span class="line">&#123;</span><br><span class="line">	unsigned int now=0;</span><br><span class="line"></span><br><span class="line">	get_fail(s2);</span><br><span class="line">	for(unsigned int i=0;i&lt;s1.length();i++)</span><br><span class="line">	&#123;</span><br><span class="line">		while(now&amp;&amp;s1.at(i)!=s2.at(now)) now=fail[now];</span><br><span class="line">		if(s1.at(i)==s2.at(now)) now++;</span><br><span class="line">		if(now==s2.length())</span><br><span class="line">		&#123;</span><br><span class="line">			printf(&quot;%d\n&quot;,i-s2.length()+1);</span><br><span class="line">			now=fail[now];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">	cin&gt;&gt;a&gt;&gt;b;</span><br><span class="line"></span><br><span class="line">	a=&quot; &quot;+a;</span><br><span class="line">	kmp(a,b);</span><br><span class="line"></span><br><span class="line">	for(unsigned int i=1;i&lt;=b.length();i++) printf(&quot;%d &quot;,fail[i]);</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <h1 id="基础数据结构"><a href="#基础数据结构" class="headerlink" title="基础数据结构"></a>基础数据结构</h1><p>基础数据结构包括数组，链表，栈，队列等，过于基础，再次不在赘述。</p>
+<h1 id="并查集"><a href="#并查集" class="headerlink" title="并查集"></a>并查集</h1><h2 id="普通并查集"><a href="#普通并查集" class="headerlink" title="普通并查集"></a>普通并查集</h2><p>并查集是一种树型的数据结构，用于处理一些不相交集合的合并及查询问题。常常在使用中以森林来表示。首先把每个点指向的父亲结点初始化为自己，然后根据要求进行查找和合并。合并的时间复杂度是<br>$\Theta(1)$ 的，而查找的时间复杂度与链长有关，最坏情况下是 $\Theta(n)$<br>的。</p>
+<h2 id="路径压缩"><a href="#路径压缩" class="headerlink" title="路径压缩"></a>路径压缩</h2><p>可以发现，查找时的路径上有哪些点我们并不关心，我们只关心根结点是哪个。于是可以想到，我们在查找的时候同时把自己的父亲结点指向根结点，就可以有效的减少链的长度。这样优化后合并的时间复杂度不变，而查找的时间复杂度降为<br>$\Theta(\alpha(n))$ ，几乎也可以看做常数。</p>
+<h2 id="带权并查集"><a href="#带权并查集" class="headerlink" title="带权并查集"></a>带权并查集</h2><p>在实际问题中，我们经常需要在并查集中记录权值，然后在合并的时候特殊处理。这种问题需要根据实际情况处理。</p>
+<h1 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h1><h2 id="普通的堆"><a href="#普通的堆" class="headerlink" title="普通的堆"></a>普通的堆</h2><p>堆是一颗特殊的完全二叉树，堆中的结点总满足按照排序方式的不同，总是大于或小于其父亲结点，称为大根堆或小根堆（根结点最大或最小）。考虑插入一个元素，将其插入堆的末尾，然后与其父亲结点比较，如果不满足堆的性质则交换，并重复此过程直到满足堆的性质。考虑弹出根结点，将其与末尾元素交换后删除，然后让根结点与其儿子比较，如果不满足如果不满足堆的性质则交换，并重复此过程直到满足堆的性质。此方法插入和删除的时间复杂度均为<br>$\Theta(\log_2 n)$ 。</p>
+<h2 id="STL-，-pb-text-ds"><a href="#STL-，-pb-text-ds" class="headerlink" title="$STL$，$pb\text{_}ds$"></a>$STL$，$pb\text{_}ds$</h2><p>在 $C++$ 的 $STL$ 和 $pb\text{_}ds$ 库中均含有 $priority\text{_}queue$<br>。调用后即可建堆。常数略大，但 $pb\text{_}ds$<br>中的一些堆时间复杂度与普通堆不同，在此不做深究。</p>
+<h2 id="可并堆"><a href="#可并堆" class="headerlink" title="可并堆"></a>可并堆</h2><p>可并堆除了支持一般的堆的基本操作以外，还支持额外的合并操作。而可并堆有多种，包括斜堆，左偏树，二项堆，配对堆，斐波那契堆等。这里只讨论左偏树。\<br>左偏树是一种具有左偏性质的堆有序二叉树。每一个结点存储的信息包括左右子结点、关键值以及距离。左偏树具有以下性质：</p>
+<ul>
+<li>堆的性质</li>
+<li>$dis[u]=dis[rson]+1$ 其中叶子结点的 $dis=0$</li>
+<li>$dis[lson]\geq dis[rson]$\<br>因为左偏树左偏，于是我们把所有操作放在右子树中，降低复杂度。\<br>合并操作是可并堆的核心操作，令 $u$ 为 $u$ ， $v$<br>中权值较小的一个，然后继续向下合并，在 $u$ 的右子树最右链中找到第一个比<br>$v$ 大的位置,将 $v$ 作为其父亲,然后继续不断递归调用合并 $v$<br>的右子树和以该结点为根的右子树即可,同时维护相关信息即可。若右子树 $dis$<br>比左子树大,则交换两个子树。\<br>同时，左偏树也支持删除。首先把删除结点的权值赋为 $-1$<br>，然后合并其左右子树得到新的左偏树，我们再把得到的这个左偏树接到删除结点的父结点上，同时维护父结点的子结点信息。但是，删除掉结点后我们可能会发现不满足左偏性质了，那么我们就需要判断是否需要交换左右子树，并且要一直向上重复判断，直到到了某一结点时左偏性质没有被破坏了或者已经到了根结点。左偏树合并的最坏时间复杂度为<br>$\Theta(\log_2 n)$</li>
+</ul>
+<h1 id="mathbf-ST-表"><a href="#mathbf-ST-表" class="headerlink" title="$\mathbf{ST}$ 表"></a>$\mathbf{ST}$ 表</h1><p>$ST$ 表是可以在 $\Theta(n)$<br>的时间复杂度内求出区间最值的数据结构。首先考虑记录一段区间内的最值，最值支持区间重叠，即\<br>$\max{a,b,c}=\max(\max(a,b),\max(b,c))$ 考虑倍增，建立数组 $st[i][j]$<br>，意为从下标 $i$ 开始的连续 $2^j$ 个数的最值。显然可以用区间 $DP$<br>来预处理 $st[][]$ 。首先初始化 $st[i][0]=val[i]$ 状态转移方程如下：<br>$st[i][j]=\max(st[i][j-1],st[i+2^{j-1},j-1])$ 这样预处理时间复杂度为<br>$\Theta(n*\log_2 n)$ 。\<br>记询问区间长度为 $len$ ，我们从左端点向右找一段长为 $2^{\log_2 len}$<br>的区间，右端点向左也找一段长为 $2^{\log_2 len}$<br>的区间，显然这两段区间已经覆盖了整个区间，取最大值即可。当然为了保证询问复杂度为<br>$\Theta(1)$ ，我们需要提前预处理出每个<br>$\left\lfloor\log_2 n\right\rfloor$ 值。</p>
+<h1 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h1><h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><p>树状数组是一个在线的数据结构，它可以做到在 $\Theta(\log_2 n)$<br>的时间复杂度内进行单点修改和区间求和。算法思路是对于一个数组 $val[]$<br>，建立一个树状图 $bit[]$ ，其中 $bit[i]$ 为以 $i$ 为末尾的一段长为<br>$lowbit(i)$ 的区间和（其中 $lowbit(i)$ 指的是 $i$ 的二进制表示中末尾的<br>$1$ 的权值），可以发现，一个结点加上自己的 $lowbit$<br>就可以找到自己的父亲结点。</p>
+<h2 id="单点修改-mathbf-modify"><a href="#单点修改-mathbf-modify" class="headerlink" title="单点修改 $\mathbf{modify}$"></a>单点修改 $\mathbf{modify}$</h2><p>考虑单点修改，修改 $val[i]$ 的值，需要修改 $bit[i]$<br>以及它的祖先。就是每次修改当前结点，然后加上自己的 $lowbit$<br>，重复此操作直到没有父结点。由于二进制中最多有 $\log_2 n$ 个 $1$<br>，所以时间复杂度为 $\Theta(\log_2 n)$ 。</p>
+<h2 id="查询前缀和-mathbf-query"><a href="#查询前缀和-mathbf-query" class="headerlink" title="查询前缀和 $\mathbf{query}$"></a>查询前缀和 $\mathbf{query}$</h2><p>考虑询问，每次可以询问结点 $i$<br>的前缀和，每次将之前不重叠的区间加起来。就是每次通过减去自己的 $lowbit$<br>实现的。和修改一样时间复杂度为 $\Theta(\log_2 n)$ 。</p>
+<h1 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h1><h2 id="构造-1"><a href="#构造-1" class="headerlink" title="构造"></a>构造</h2><p>线段树是一种二叉搜索树，它将一个区间划分成一些单元区间，每个单元区间对应线段树中的一个叶结点。若一个结点代表区间为<br>$[L,R]$ ，那么其左儿子代表的区间为 $[L,(L+R)/2]$ ，右儿子代表的区间为<br>$[(L+R)/2+1,R]$ ，所有叶子结点代表的区间长均为 $1$<br>。这样看，其实线段树也是一颗完全二叉树，所以可以用位运算来构造线段树（当然也可以动态开点）。对于一个非叶子结点<br>$nd$ ，可以用 $nd<em>2$ 表示其左儿子，用 $nd</em>2+1$ 表示其右儿子。</p>
+<h2 id="区间修改-mathbf-modify"><a href="#区间修改-mathbf-modify" class="headerlink" title="区间修改 $\mathbf{modify}$"></a>区间修改 $\mathbf{modify}$</h2><p>单点修改其实可以归为区间修改的子问题，所以这里只讨论区间修改。考虑分块的思想，对于整个区间都要修改的结点，直接在该结点上打懒标记，对于零散的区间进行递归，找到所以需要修改的区间。线段树可以支持不止一个懒标记，但需要在下放的时候考虑顺序和相互影响。由于线段树有<br>$\log_2 n$ 层，所以时间复杂度为 $\Theta(\log_2 n)$ 。</p>
+<h2 id="区间查询-mathbf-query"><a href="#区间查询-mathbf-query" class="headerlink" title="区间查询 $\mathbf{query}$"></a>区间查询 $\mathbf{query}$</h2><p>和区间修改一样，同样是分块的思想。对于整个区间都在查询区间内的结点，直接加上该结点的值，零散的区间进行递归。时间复杂度同样为<br>$\log_2 n$ 。</p>
+<h2 id="权值线段树"><a href="#权值线段树" class="headerlink" title="权值线段树"></a>权值线段树</h2><p>权值线段树和线段树，唯一的本质的区别就是他们维护的东西不一样。权值线段树的下标就是值域，可能会有区间修改，区间询问，还可以打各种各样的标记。</p>
+<h2 id="可持久化"><a href="#可持久化" class="headerlink" title="可持久化"></a>可持久化</h2><p>可持久化线段树又称主席树。用于查询区间第 $k$<br>大。主席树的主要思想就是：保存每次插入操作时的历史版本，以便查询区间第<br>$k$<br>大。主席树只需要支持单点修改，也就是说每次修改只会影响一条链。考虑每次修改都新建一条链，在这条链上储存新的信息。如何查询区间第<br>$k$ 大？考虑首先将问题简化，查询区间 $[1,R]$ 的第 $k$<br>大。其实我们只需要在初始时建一颗空树，然后按从小到大一次插入值，查询时找到插入<br>$r$<br>的历史版本，用权值线段树解决。在主席树中，维护的信息有前缀和的特点，所以<br>$[L,R]$ 区间的信息可以用 $[1,R]-[1,L-1]$ 来得到。同样用权值线段树解决。</p>
+<h1 id="分块"><a href="#分块" class="headerlink" title="分块"></a>分块</h1><h2 id="数据结构简介"><a href="#数据结构简介" class="headerlink" title="数据结构简介"></a>数据结构简介</h2><p>分块算法实质上是一种是通过分成多块后在每块上打标记以实现快速区间修改，区间查询的一种算法。其均摊时间复杂度为<br>$\Theta(\sqrt{n})$ 。\<br>为了使得其有着最稳定的时间复杂度，我们经常讲一个长度为 $n$ 的序列分为<br>$\sqrt{n}$ 个大小为 $\sqrt{n}$ 的块，如果 $n$<br>不是完全平方数，则序列最右端会多出一个角块</p>
+<h2 id="区间修改-mathbf-modify-1"><a href="#区间修改-mathbf-modify-1" class="headerlink" title="区间修改 $\mathbf{modify}$"></a>区间修改 $\mathbf{modify}$</h2><p>考虑修改，当我们修改任意一个区间 $[L,R]$ 时，如果 $L$ 所在的块与 $R$<br>所在的块相同，则直接暴力修改即可，若其不在一个块但是块是相邻的，一样是暴力修改，若其块不相邻，我们先处理两边的边块角块，最后直接修改中间块即可，三种情况时间复杂度均为<br>$\Theta(\sqrt{n})$ 。</p>
+<h2 id="区间查询-mathbf-query-1"><a href="#区间查询-mathbf-query-1" class="headerlink" title="区间查询 $\mathbf{query}$"></a>区间查询 $\mathbf{query}$</h2><p>和修改一样，查询的方法也是边角暴力，整块打标记。</p>
+<h1 id="mathbf-Splay"><a href="#mathbf-Splay" class="headerlink" title="$\mathbf{Splay}$"></a>$\mathbf{Splay}$</h1><h2 id="数据结构简介-1"><a href="#数据结构简介-1" class="headerlink" title="数据结构简介"></a>数据结构简介</h2><p>$Splay$ ，是一种二叉排序树，它能在 $\Theta(\log_2 n)$<br>内完成插入、查找和删除操作。因为 $Splay$<br>是一颗二叉排序树，所以它的每一个结点都应该满足如下性质：</p>
+<ul>
+<li>若左子树不空，则左子树上所有结点的值均小于或等于这个结点的值。</li>
+<li>若右子树不空，则右子树上所有结点的值均大于或等于这个结点的值。\<br>我们知道，在对二叉树进行中序遍历时，会先遍历左子树，然后是自身，最后才是右子树。所以一颗二叉排序树的中序遍历是不严格单调递增的。我们在进行重构树时，也需要保证中序遍历不变。<br>$Splay$ 所有的操作时间复杂度都可以近似的看做 $\Theta(\log_2 n)$ 。</li>
+</ul>
+<h2 id="旋转操作-mathbf-rotate"><a href="#旋转操作-mathbf-rotate" class="headerlink" title="旋转操作 $\mathbf{rotate}$"></a>旋转操作 $\mathbf{rotate}$</h2><p>核心操作。 $Splay$<br>通过旋转操作来保持平衡。旋转时需要保证中序遍历不变，步骤如下：</p>
+<ul>
+<li>求出目标结点位于父亲结点的方向，并作为基本方向。</li>
+<li>目标结点父亲的同向儿子 $-&gt;$ 目标结点的异向儿子。</li>
+<li>目标结点爷爷的（左/右）儿子 $-&gt;$ 目标结点。</li>
+<li>目标结点的异向儿子 $-&gt;$ 目标结点的父亲。</li>
+</ul>
+<h2 id="伸展操作-mathbf-splay"><a href="#伸展操作-mathbf-splay" class="headerlink" title="伸展操作 $\mathbf{splay}$"></a>伸展操作 $\mathbf{splay}$</h2><p>考虑旋转，将一个结点一直旋转至目标结点的儿子，如果目标结点为 $0$<br>，则表示旋转至根结点。其实只需要每次进行旋转后判断父亲是不是目标结点，如果爷爷，父亲与当前结点”三点一线”，我们就要先旋转父结点，再旋转当前结点，使这颗<br>$Splay$ 更平衡（这是一个很玄学的问题）。</p>
+<h2 id="寻找操作-mathbf-find"><a href="#寻找操作-mathbf-find" class="headerlink" title="寻找操作 $\mathbf{find}$"></a>寻找操作 $\mathbf{find}$</h2><p>这是一个辅助操作，目的是把最大的小于等于指定值的结点（如果有这个值，则返回这个值，否则返回最大的小于这个值的结点）<br>$splay$<br>到根结点。操作很简单，只需要在每个结点处判断当前结点值是否小于指定值，再决定向左或向右,最后把找到的值<br>$splay$ 上来。</p>
+<h2 id="插入操作-mathbf-insert"><a href="#插入操作-mathbf-insert" class="headerlink" title="插入操作 $\mathbf{insert}$"></a>插入操作 $\mathbf{insert}$</h2><p>这个操作的目的是向 $Splay$<br>里插入一个值。和上一个操作类似，也是需要在每个结点处判断当前结点值是否小于指定值，再决定向左或向右，如果结点存在则直接自增cnt的值。否则新建结点并与父结点连边。同时因为新建结点时可能会拉出一条链，为了保持<br>$Splay$ 的平衡，我们需要将该结点 $splay$ 到根。</p>
+<h2 id="求第-mathbf-k-大-mathbf-kth"><a href="#求第-mathbf-k-大-mathbf-kth" class="headerlink" title="求第 $\mathbf{k}$ 大 $\mathbf{kth}$"></a>求第 $\mathbf{k}$ 大 $\mathbf{kth}$</h2><p>同样是从根结点开始向下搜，每次需要判断 $k$<br>与左子树大小，与（左子树大小+该结点 $cnt$<br>）的大小关系，再决定向左或向右，或是返回这个结点。</p>
+<h2 id="求排名-mathbf-rank"><a href="#求排名-mathbf-rank" class="headerlink" title="求排名 $\mathbf{rank}$"></a>求排名 $\mathbf{rank}$</h2><p>只需要把这个值转到根，再返回根结点左子树大小即可。</p>
+<h2 id="求前驱后继-mathbf-prev-amp-succ"><a href="#求前驱后继-mathbf-prev-amp-succ" class="headerlink" title="求前驱后继 $\mathbf{prev\&amp;succ}$"></a>求前驱后继 $\mathbf{prev\&amp;succ}$</h2><p>求指定值的前驱（比它小的数中最大的）只需要找到左子树中最右边的那一个，返回即可。同理，求指定值的后继（比它大的数中最小的），只需要找到右子树中最左边的那一个，返回即可。</p>
+<h2 id="删除操作-mathbf-remove"><a href="#删除操作-mathbf-remove" class="headerlink" title="删除操作 $\mathbf{remove}$"></a>删除操作 $\mathbf{remove}$</h2><p>如果把 $prev(x)\quad splay$ 到根结点，把 $succ(x)\quad splay$ 到 $prev(x)$<br>的右儿子，那么 $succ(x)$<br>的左儿子只会有目标结点一个结点，删除方法显而易见。</p>
+<h2 id="区间翻转-mathbf-reverse"><a href="#区间翻转-mathbf-reverse" class="headerlink" title="区间翻转 $\mathbf{reverse}$"></a>区间翻转 $\mathbf{reverse}$</h2><p>和线段树区间加一样，这个地方也运用了”懒标记”的思想。和\<br>$remove$ 操作类似，将 $[L,R]$ 区间提取出来，可以把 $L-1\quad splay$<br>到根结点，把 $R+1\quad splay$ 到根结点的儿子，再对这个区间打上”懒标记”。</p>
+<h1 id="mathbf-Link-Cut-quad-Tree"><a href="#mathbf-Link-Cut-quad-Tree" class="headerlink" title="$\mathbf{Link-Cut\quad Tree}$"></a>$\mathbf{Link-Cut\quad Tree}$</h1><h2 id="数据结构简介-2"><a href="#数据结构简介-2" class="headerlink" title="数据结构简介"></a>数据结构简介</h2><p>$Link-Cut\quad Tree$<br>是一种用来维护动态森林连通性的数据结构，适用于动态树问题。它采用类似树链剖分的轻重边路径剖分，把树边分为实边和虚边，并用<br>$Splay$ 来维护每一条实路径。本质上， $Link-Cut\quad Tree$ 维护的是一个<br>$Splay$ 森林。 $Link-Cut\quad Tree$ 的所有操作时间复杂度均为均摊<br>$\Theta(\log_2 n)$ ，但常数略大。</p>
+<h2 id="打通操作-mathbf-access"><a href="#打通操作-mathbf-access" class="headerlink" title="打通操作 $\mathbf{access}$"></a>打通操作 $\mathbf{access}$</h2><p>这是 $Link-Cut\quad Tree$ 最基础的操作，意思是将点 $x$<br>到原树中根结点之间的链丢到一个辅助树 $Splay$ 里面。每次将 $x$ 点 $splay$<br>到当前所在辅助树的根节点，将它的右儿子更新为上一个 $x$ ，然后令 $x$<br>跳到它的父节点，特别的，第一个 $x$ 的右儿子设为 $0$ 。</p>
+<h2 id="找根操作-mathbf-findroot"><a href="#找根操作-mathbf-findroot" class="headerlink" title="找根操作 $\mathbf{findroot}$"></a>找根操作 $\mathbf{findroot}$</h2><p>我们可以通过 $x$ 向上找，用 $access$ 操作可以将 $x$ 和 $x$<br>的根结点放到一个 $Splay$ 里。又因为 $x$ 的左子树所有结点的权值 $&lt;x&lt;\quad x$<br>右子树所有结点的权值。而我们又知道，在执行完 $access$ 操作后，这课<br>$Splay$ 里面的结点权值最大的(深度最大的)就是 $x$<br>。于是我们可以将$x\quad splay$ 到这棵 $Splay$<br>的根结点，那么现在最左边的节点便是这课树的根结点了。</p>
+<h2 id="换根操作-mathbf-makeroot"><a href="#换根操作-mathbf-makeroot" class="headerlink" title="换根操作 $\mathbf{makeroot}$"></a>换根操作 $\mathbf{makeroot}$</h2><p>具体操作是我们先将 $x$ 点与原树中的根打通一条链，那么现在它们就在同一棵<br>$Splay$ 里面了，可以发现 $x$<br>一定是在它所在的辅助树的中序遍历的最后一个的(因为它是这条链上最深的点)，我们把<br>$x\quad splay$ 到 $Splay$ 的根上，那么 $x$ 显然是没有右子树的，我们要实现将<br>$x$ 移到原树的根上，也就是将 $x$ 到根的这条链的深度全部翻转一遍，在<br>$Splay$ 上的体现就是将整棵树翻转一遍。</p>
+<h2 id="提取操作-mathbf-split"><a href="#提取操作-mathbf-split" class="headerlink" title="提取操作 $\mathbf{split}$"></a>提取操作 $\mathbf{split}$</h2><p>这个操作是将 $x$ 到 $y$ 之间的那条路径丢到一棵辅助树里，并且这棵辅助树以<br>$y$ 节点为根(方便处理信息)。 $Splay$<br>维护的是原树中的一条链，我们不能保证 $x$ , $y$<br>会在同一条链里。所以我们可以先把 $x$ 变成原树的根节点，这样 $access(y)$<br>就会将 $x$ 到 $y$ 之间的所有节点丢到一个 $Splay$ 中了。最后来一个把<br>$y\quad splay$ 到根就可以达到目的。</p>
+<h2 id="链接操作-mathbf-link"><a href="#链接操作-mathbf-link" class="headerlink" title="链接操作 $\mathbf{link}$"></a>链接操作 $\mathbf{link}$</h2><p>考虑 $Link-Cut\quad Tree$ 的本职工作：将 $x$ 和 $y$<br>所在树合并起来。首先将x点丢到树的根，然后去找找 $y$ 的根是不是 $x$<br>，如果不是说明 $x$ ， $y$ 不在一个树内，我们将 $x$ 的父节点设为 $y$<br>，也就相当于从 $y$ 到 $x$ 连了一条虚边。</p>
+<h2 id="切断操作-mathbf-cut"><a href="#切断操作-mathbf-cut" class="headerlink" title="切断操作 $\mathbf{cut}$"></a>切断操作 $\mathbf{cut}$</h2><p>再考虑另一个操作，将 $x$ ， $y$ 分开。首先我们先把 $x$ ， $y$<br>之间的那条边用 $split$ 拎出来，因为 $x$ ， $y$ 是相邻的，所以 $y$<br>的左儿子一定是 $x$ ，将它们的父子关系取消即可。</p>
 
       
     </div>
@@ -548,7 +572,7 @@
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
     
-    <a href="https://big-showers.github.io/2019/07/14/浅谈KMP/" title="浅谈KMP">https://big-showers.github.io/2019/07/14/浅谈KMP/</a>
+    <a href="https://big-showers.github.io/2019/08/21/数据结构总结/" title="数据结构总结">https://big-showers.github.io/2019/08/21/数据结构总结/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
@@ -564,7 +588,7 @@
         
         <div class="post-tags">
           
-            <a href="/tags/String-Algorithm/" rel="tag"># String Algorithm</a>
+            <a href="/tags/Summarize/" rel="tag"># Summarize</a>
           
         </div>
       
@@ -589,8 +613,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/07/10/浅谈Splay/" rel="next" title="浅谈Splay">
-                <i class="fa fa-chevron-left"></i> 浅谈Splay
+              <a href="/2019/08/21/图论总结/" rel="next" title="图论总结">
+                <i class="fa fa-chevron-left"></i> 图论总结
               </a>
             
           </div>
@@ -599,8 +623,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/08/21/数论总结/" rel="prev" title="数论总结">
-                数论总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/08/21/DP总结/" rel="prev" title="DP总结">
+                DP总结 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -773,7 +797,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是-mathbf-KMP"><span class="nav-number">1.</span> <span class="nav-text">什么是 $\mathbf{KMP}$</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathbf-KMP-算法的思想"><span class="nav-number">2.</span> <span class="nav-text">$\mathbf{KMP}$ 算法的思想</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何预处理出-mathbf-fail-数组"><span class="nav-number">3.</span> <span class="nav-text">如何预处理出 $\mathbf{fail}$ 数组</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结语"><span class="nav-number">4.</span> <span class="nav-text">结语</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础数据结构"><span class="nav-number">1.</span> <span class="nav-text">基础数据结构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#并查集"><span class="nav-number">2.</span> <span class="nav-text">并查集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通并查集"><span class="nav-number">2.1.</span> <span class="nav-text">普通并查集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#路径压缩"><span class="nav-number">2.2.</span> <span class="nav-text">路径压缩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带权并查集"><span class="nav-number">2.3.</span> <span class="nav-text">带权并查集</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#堆"><span class="nav-number">3.</span> <span class="nav-text">堆</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#普通的堆"><span class="nav-number">3.1.</span> <span class="nav-text">普通的堆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STL-，-pb-text-ds"><span class="nav-number">3.2.</span> <span class="nav-text">$STL$，$pb\text{_}ds$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可并堆"><span class="nav-number">3.3.</span> <span class="nav-text">可并堆</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathbf-ST-表"><span class="nav-number">4.</span> <span class="nav-text">$\mathbf{ST}$ 表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树状数组"><span class="nav-number">5.</span> <span class="nav-text">树状数组</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造"><span class="nav-number">5.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单点修改-mathbf-modify"><span class="nav-number">5.2.</span> <span class="nav-text">单点修改 $\mathbf{modify}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查询前缀和-mathbf-query"><span class="nav-number">5.3.</span> <span class="nav-text">查询前缀和 $\mathbf{query}$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#线段树"><span class="nav-number">6.</span> <span class="nav-text">线段树</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#构造-1"><span class="nav-number">6.1.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间修改-mathbf-modify"><span class="nav-number">6.2.</span> <span class="nav-text">区间修改 $\mathbf{modify}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间查询-mathbf-query"><span class="nav-number">6.3.</span> <span class="nav-text">区间查询 $\mathbf{query}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权值线段树"><span class="nav-number">6.4.</span> <span class="nav-text">权值线段树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#可持久化"><span class="nav-number">6.5.</span> <span class="nav-text">可持久化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分块"><span class="nav-number">7.</span> <span class="nav-text">分块</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构简介"><span class="nav-number">7.1.</span> <span class="nav-text">数据结构简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间修改-mathbf-modify-1"><span class="nav-number">7.2.</span> <span class="nav-text">区间修改 $\mathbf{modify}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间查询-mathbf-query-1"><span class="nav-number">7.3.</span> <span class="nav-text">区间查询 $\mathbf{query}$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathbf-Splay"><span class="nav-number">8.</span> <span class="nav-text">$\mathbf{Splay}$</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构简介-1"><span class="nav-number">8.1.</span> <span class="nav-text">数据结构简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#旋转操作-mathbf-rotate"><span class="nav-number">8.2.</span> <span class="nav-text">旋转操作 $\mathbf{rotate}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#伸展操作-mathbf-splay"><span class="nav-number">8.3.</span> <span class="nav-text">伸展操作 $\mathbf{splay}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#寻找操作-mathbf-find"><span class="nav-number">8.4.</span> <span class="nav-text">寻找操作 $\mathbf{find}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入操作-mathbf-insert"><span class="nav-number">8.5.</span> <span class="nav-text">插入操作 $\mathbf{insert}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求第-mathbf-k-大-mathbf-kth"><span class="nav-number">8.6.</span> <span class="nav-text">求第 $\mathbf{k}$ 大 $\mathbf{kth}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求排名-mathbf-rank"><span class="nav-number">8.7.</span> <span class="nav-text">求排名 $\mathbf{rank}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求前驱后继-mathbf-prev-amp-succ"><span class="nav-number">8.8.</span> <span class="nav-text">求前驱后继 $\mathbf{prev\&amp;succ}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除操作-mathbf-remove"><span class="nav-number">8.9.</span> <span class="nav-text">删除操作 $\mathbf{remove}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间翻转-mathbf-reverse"><span class="nav-number">8.10.</span> <span class="nav-text">区间翻转 $\mathbf{reverse}$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#mathbf-Link-Cut-quad-Tree"><span class="nav-number">9.</span> <span class="nav-text">$\mathbf{Link-Cut\quad Tree}$</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构简介-2"><span class="nav-number">9.1.</span> <span class="nav-text">数据结构简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打通操作-mathbf-access"><span class="nav-number">9.2.</span> <span class="nav-text">打通操作 $\mathbf{access}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#找根操作-mathbf-findroot"><span class="nav-number">9.3.</span> <span class="nav-text">找根操作 $\mathbf{findroot}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#换根操作-mathbf-makeroot"><span class="nav-number">9.4.</span> <span class="nav-text">换根操作 $\mathbf{makeroot}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#提取操作-mathbf-split"><span class="nav-number">9.5.</span> <span class="nav-text">提取操作 $\mathbf{split}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#链接操作-mathbf-link"><span class="nav-number">9.6.</span> <span class="nav-text">链接操作 $\mathbf{link}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#切断操作-mathbf-cut"><span class="nav-number">9.7.</span> <span class="nav-text">切断操作 $\mathbf{cut}$</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -105,13 +105,18 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="BIG-Showers&#39; Blog">
-<meta property="og:url" content="https://big-showers.github.io/index.html">
+  <meta name="description" content="基础数论扩展欧几里得算法 $\mathbf{exgcd}$首先介绍一下贝祖定理。若 $a,b$ 是整数，那么 $a\cdot x+b\cdot y=\gcd(a,b)$一定有解。如果需要判断 $a\cdot x+b\cdot y=c$ 有没有解，可以直接判断 $c|\gcd(a,b)$可以用欧几里得算法求 $\gcd(a,b)$。但如果需要求出一组解，我们就必须对欧几里得算法进行扩展。考虑边界，欧">
+<meta name="keywords" content="Summarize">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数论总结">
+<meta property="og:url" content="https://big-showers.github.io/2019/08/21/数论总结/index.html">
 <meta property="og:site_name" content="BIG-Showers&#39; Blog">
+<meta property="og:description" content="基础数论扩展欧几里得算法 $\mathbf{exgcd}$首先介绍一下贝祖定理。若 $a,b$ 是整数，那么 $a\cdot x+b\cdot y=\gcd(a,b)$一定有解。如果需要判断 $a\cdot x+b\cdot y=c$ 有没有解，可以直接判断 $c|\gcd(a,b)$可以用欧几里得算法求 $\gcd(a,b)$。但如果需要求出一组解，我们就必须对欧几里得算法进行扩展。考虑边界，欧">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-21T12:46:42.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BIG-Showers&#39; Blog">
+<meta name="twitter:title" content="数论总结">
+<meta name="twitter:description" content="基础数论扩展欧几里得算法 $\mathbf{exgcd}$首先介绍一下贝祖定理。若 $a,b$ 是整数，那么 $a\cdot x+b\cdot y=\gcd(a,b)$一定有解。如果需要判断 $a\cdot x+b\cdot y=c$ 有没有解，可以直接判断 $c|\gcd(a,b)$可以用欧几里得算法求 $\gcd(a,b)$。但如果需要求出一组解，我们就必须对欧几里得算法进行扩展。考虑边界，欧">
 
 
 
@@ -119,7 +124,7 @@
 
   
   
-  <link rel="canonical" href="https://big-showers.github.io/">
+  <link rel="canonical" href="https://big-showers.github.io/2019/08/21/数论总结/">
 
 
 
@@ -129,7 +134,7 @@
   };
 </script>
 
-  <title>BIG-Showers' Blog</title>
+  <title>数论总结 | BIG-Showers' Blog</title>
   
 
 
@@ -177,8 +182,7 @@
     
   
 
-  <div class="container sidebar-position-right 
-  page-home">
+  <div class="container sidebar-position-right page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,7 +220,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -353,539 +357,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://big-showers.github.io/2019/08/21/DP总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LWQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BIG-Showers' Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/08/21/DP总结/" class="post-title-link" itemprop="url">DP总结</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：08-21-2019 21:01:43 / 修改时间：21:02:24" itemprop="dateCreated datePublished" datetime="2019-08-21T21:01:43+08:00">08-21-2019</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span title="本文字数">3.4k</span>
-            </span>
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span title="阅读时长">3 分钟</span>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              背包 $\mathbf{DP}$$DP$ 的背包问题是最基础的 $DP$ 了，分为 $01$ 背包，完全背包和多重背包。
-$\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总共有 $n$件物体，每件物品的体积为 $v_i$ ，价值为 $w_i$，每件物品只有一个，选择
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/21/DP总结/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://big-showers.github.io/2019/08/21/数据结构总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LWQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BIG-Showers' Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/08/21/数据结构总结/" class="post-title-link" itemprop="url">数据结构总结</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：08-21-2019 20:39:14 / 修改时间：20:55:50" itemprop="dateCreated datePublished" datetime="2019-08-21T20:39:14+08:00">08-21-2019</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span title="本文字数">6.6k</span>
-            </span>
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span title="阅读时长">6 分钟</span>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              基础数据结构基础数据结构包括数组，链表，栈，队列等，过于基础，再次不在赘述。
-并查集普通并查集并查集是一种树型的数据结构，用于处理一些不相交集合的合并及查询问题。常常在使用中以森林来表示。首先把每个点指向的父亲结点初始化为自己，然后根据要求进行查找和合并。合并的时间复杂度是$\Theta(1)$ 的
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/21/数据结构总结/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://big-showers.github.io/2019/08/21/图论总结/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LWQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BIG-Showers' Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/08/21/图论总结/" class="post-title-link" itemprop="url">图论总结</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：08-21-2019 20:10:47 / 修改时间：20:46:16" itemprop="dateCreated datePublished" datetime="2019-08-21T20:10:47+08:00">08-21-2019</time>
-            </span>
-          
-
-          
-            
-
-            
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span title="本文字数">6.3k</span>
-            </span>
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span title="阅读时长">6 分钟</span>
-            </span>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>
-              最短路算法$\mathbf{Floyd}$ 算法思路简介$Floyd$ 算法的思想本质是一个 $DP$ ，首先枚举中间点 $k$ ，对于每条路径$i-&gt;j$ ，判断此路径若经过点 $k$是否更优。状态转移方程为 $dis[i][j]=\min(dis[i][k]+dis[k][j],dis[i
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/21/图论总结/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -917,10 +391,8 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/08/21/数论总结/" class="post-title-link" itemprop="url">数论总结</a>
+          <h1 class="post-title" itemprop="name headline">数论总结
+
               
             
           </h1>
@@ -966,6 +438,14 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
           
 
           
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+                 阅读次数： 
+                <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+              </span>
+            </span>
+          
 
           <br>
           
@@ -1007,22 +487,33 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
       
 
       
-        
-          
-            <p>
-              基础数论扩展欧几里得算法 $\mathbf{exgcd}$首先介绍一下贝祖定理。若 $a,b$ 是整数，那么 $a\cdot x+b\cdot y=\gcd(a,b)$一定有解。如果需要判断 $a\cdot x+b\cdot y=c$ 有没有解，可以直接判断 $c|\gcd(a,b)$可以用欧几里得
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/08/21/数论总结/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
+        <h1 id="基础数论"><a href="#基础数论" class="headerlink" title="基础数论"></a>基础数论</h1><h2 id="扩展欧几里得算法-mathbf-exgcd"><a href="#扩展欧几里得算法-mathbf-exgcd" class="headerlink" title="扩展欧几里得算法 $\mathbf{exgcd}$"></a>扩展欧几里得算法 $\mathbf{exgcd}$</h2><p>首先介绍一下贝祖定理。若 $a,b$ 是整数，那么 $a\cdot x+b\cdot y=\gcd(a,b)$一定有解。如果需要判断 $a\cdot x+b\cdot y=c$ 有没有解，可以直接判断 $c|\gcd(a,b)$可以用欧几里得算法求 $\gcd(a,b)$。但如果需要求出一组解，我们就必须对欧几里得算法进行扩展。考虑边界，欧几里得算法结束的条件是$b=0,a=\gcd(a,b)$ ，此时可以得到一组解 $x=1,y=0$。再考虑回溯是处理，每层我们都已知 $\gcd(b,a\bmod b)$ ，并且有一组解$x1,y1$ 使得 $b\cdot x1+(a\bmod b)\cdot y1=gcd$ 。我们知道，$a\bmod b=a-\left\lfloor\frac{a}{b}\right\rfloor\cdot b$ 带入化简得$a\cdot y1+b\cdot (x1-\left\lfloor\frac{a}{b}\right\rfloor\cdot y1)=gcd$ 可以发现，$x=y1,y=x1-\left\lfloor\frac{a}{b}\right\rfloor\cdot y1$可以递归求解。时间复杂度为 $\Theta(\log_2 \max(a,b))$</p>
+<h2 id="乘法逆元-mathbf-inv"><a href="#乘法逆元-mathbf-inv" class="headerlink" title="乘法逆元 $\mathbf{inv}$"></a>乘法逆元 $\mathbf{inv}$</h2><p>对于两个数 $a,p$ ，若有 $\gcd(a,p)=1$ ，那么一定<br>$\exists b\quad  a\cdot b\equiv 1\pmod{p}$ 。此时称 $b$ 为 $a$ 在模 $p$<br>意义下的逆元，记做 $a^{-1}=b$ 。计算乘法逆元，有多种方法。</p>
+<h2 id="费马小定理"><a href="#费马小定理" class="headerlink" title="费马小定理"></a>费马小定理</h2><p>费马小定理的内容是若 $\gcd(a,p)=1$ 则有 $a^p\equiv a\pmod{p}$<br>将其变形，可得 $a\cdot a^{p-2}\equiv 1\pmod{p}$ 所以可以得到<br>$a^{-1}=a^{p-2}$ 可用快速幂求出。</p>
+<h2 id="扩展欧几里得"><a href="#扩展欧几里得" class="headerlink" title="扩展欧几里得"></a>扩展欧几里得</h2><p>由定义可变形得到 $a\cdot a^{-1}=k\cdot p+1$ 移项可得 $a\cdot a^{-1}-k\cdot p=1$<br>与扩展欧几里得的标准形式一致。</p>
+<h2 id="线性递推计算"><a href="#线性递推计算" class="headerlink" title="线性递推计算"></a>线性递推计算</h2><p>首先简单计算可得 $1^{-1}=1$ 。考虑对于 $\forall i$ ，如果 $i-1$<br>的逆元已经求出，可以线性求出。令 $p=k\cdot i+r$ ，则<br>$k=\left\lfloor\frac{p}{i}\right\rfloor,r=p \bmod i$ ，可得<br>$k\cdot i+r\equiv 0\pmod{p}$ 经过代入整理得<br>$i^{-1}\equiv-\left\lfloor\frac{p}{i}\right\rfloor\cdot (p \bmod i)^{-1}\pmod{p}$<br>得出线性递推式。时间复杂度为 $\Theta(n)$ 。</p>
+<h2 id="阶乘递推计算"><a href="#阶乘递推计算" class="headerlink" title="阶乘递推计算"></a>阶乘递推计算</h2><p>由逆元的定义可得 $n!^{-1}\equiv \frac{1}{n!}\pmod{p}$ 左右同乘 $n$<br>，化简得 $n!^{-1}\cdot n\equiv (n-1)!^{-1}\pmod{p}$ 得到递推式<br>$n!^{-1}\equiv \frac{(n-1)!^{-1}}{n}\pmod{p}$</p>
+<h2 id="中国剩余定理-mathbf-crt"><a href="#中国剩余定理-mathbf-crt" class="headerlink" title="中国剩余定理 $\mathbf{crt}$"></a>中国剩余定理 $\mathbf{crt}$</h2><p> 中国剩余定理主要是为了解一种特殊的同余方程组。形如 $\begin{cases}<br>        x\equiv a_1\pmod{p_1}\\<br>        x\equiv a_2\pmod{p_2}\\<br>        \cdots \\<br>        x\equiv a_n\pmod{p_n}<br>    \end{cases}$ 的式子。同时，式子满足 $\forall i,\forall j,i\neq j$<br>都有 $\gcd(p_i,p_j)=1$ 。考虑暴力做法，可以得到答案为下式<br>$k_1\cdot \frac{p_1\cdot p_2\cdot \cdots \cdot p_n}{p_1}+k_2\cdot \frac{p_1\cdot p_2\cdot \cdots \cdot p_n}{p_2}+\cdots +k_n\cdot \frac{p_1\cdot p_2\cdot \cdots \cdot p_n}{p_n}$<br>且 $\forall i,i\leq n$ 满足<br>$k_i\cdot \frac{p_1\cdot p_2\cdot \cdots \cdot p_n}{p_i}\bmod p_i=a_i$ 。设<br>$m_i=\frac{p_1\cdot p_2\cdot \cdots \cdot p_n}{p_i}$ 那么 $k_i\cdot m_i\equiv a_i\pmod{p_i}$<br>此时可以用逆元来求解 $k_i$ 最后求出答案。时间复杂度为 $\Theta(1)$ 。</p>
+<h2 id="扩展中国剩余定理-mathbf-excrt"><a href="#扩展中国剩余定理-mathbf-excrt" class="headerlink" title="扩展中国剩余定理 $\mathbf{excrt}$"></a>扩展中国剩余定理 $\mathbf{excrt}$</h2><p>如果中国剩余定理中的 $p_i$ 不满足 $\forall i,\forall j,i\neq j$ 都有<br>$\gcd(p_i,p_j)=1$ ，就不能使用中国剩余定理求解。考虑两两合并，下面方程组<br>$\begin{cases}<br>        x\equiv a_1\pmod{p_1}\\<br>        x\equiv a_2\pmod{p_2}\\<br>    \end{cases}$ 可以化成 $p_1\cdot y+a_i=p_2\cdot z+a_2$<br>这个东西可以用扩展欧几里得合并。每次两两合并得出答案。时间复杂度<br>$\Theta(n\cdot \log_2 n)$ 。</p>
+<h2 id="大步小步算法-mathbf-BSGS"><a href="#大步小步算法-mathbf-BSGS" class="headerlink" title="大步小步算法 $\mathbf{BSGS}$"></a>大步小步算法 $\mathbf{BSGS}$</h2><p>$BSGS$ 算法的目的是求解形如 $a^b\equiv c\pmod{p}$ ，其中 $\gcd(a,p)=1$<br>的同余方程。首先将 $b$ 写成 $k\cdot x+r$ 的形式。代入原式，得<br>$a^{k\cdot x}\equiv c\cdot a^r\pmod{p}$ 首先求出 $b$ 在 $[0,x-1]$<br>范围内右式的值，并储存。然后枚举所有可能的 $a$<br>，计算出左式的值，然后查询。时间复杂度为 $\Theta(\max(x,p/x))$ 可得<br>$x=\sqrt{p}$ 是最优。时间复杂度 $\Theta(\sqrt{p})$ 。</p>
+<h2 id="扩展大步小步算法-mathbf-exBSGS"><a href="#扩展大步小步算法-mathbf-exBSGS" class="headerlink" title="扩展大步小步算法 $\mathbf{exBSGS}$"></a>扩展大步小步算法 $\mathbf{exBSGS}$</h2><p>如果在求解形如 $a^b\equiv c\pmod{p}$ 的同余方程时 $\gcd(a,p)\neq 1$<br>我们不能用 $BSGS$<br>来求。这个时候我们就必须换一种方法。首先把方程改写为等式 $a^b+k\cdot p=c$<br>发现此时的 $c$ 必须要是 $\gcd(a,p)$<br>的倍数，否则无解。不断在等式两边同时除以 $gcd(a,p)$ 直到<br>$\gcd(a,\frac{c}{\gcd(a,p)})=1$ ，此时式子满足 $BSGS$ 的求解条件，用<br>$BSGS$ 求解。</p>
+<h2 id="卢卡斯定理-mathbf-Lucas"><a href="#卢卡斯定理-mathbf-Lucas" class="headerlink" title="卢卡斯定理 $\mathbf{Lucas}$"></a>卢卡斯定理 $\mathbf{Lucas}$</h2><p>$Lucas$ 定理用于求 $C_n^m\bmod p$ 的值。由二项式定理可知 $C_n^m$ 即为<br>$(x+1)^n$ 中 $x^m$ 的系数。对于式子<br>$(x+1)^{n_0}\cdot (x^p+1)^{n_1}\cdot (x^{p^2}+1)^{n_2}\cdot \cdots \cdot (x^{p^n}+1)^{n_k}\pmod{p}$<br>$C_{n_0}^{m_0}$ 即为 $(x+1)^n_0$ 中 $x^{b_0}$ 的系数， $C_{n_k}^{m_k}$<br>即为 $(x^{p^k}+1)^{n_k}$ 中 $x^{b_k\cdot p^k}$ 的系数，同理可得其余。因为<br>$\prod_{i=0}^k C_{n_i}^{m_i}\cdot x^{m_i\cdot p^i}=C_n^m\cdot x^m$ 所以可得<br>$C_n^m=\prod_{i=0}^k C_{n_i}^{m_i}$ 时间复杂度为 $\Theta(p\cdot \log_p n)$<br>。</p>
+<h1 id="素数合数"><a href="#素数合数" class="headerlink" title="素数合数"></a>素数合数</h1><h2 id="枚举判断"><a href="#枚举判断" class="headerlink" title="枚举判断"></a>枚举判断</h2><p>思路很简单，枚举 $[2,\left\lfloor\sqrt{n}\right\rfloor]$<br>范围内所有的数，判断是否是 $n$ 的因数。时间复杂度为 $\Theta(\sqrt{n})$<br>。</p>
+<h2 id="埃氏筛"><a href="#埃氏筛" class="headerlink" title="埃氏筛"></a>埃氏筛</h2><p>埃氏筛的思想很简单，从 $2$<br>开始向后扫描，如果这个数是不是合数，那么把它的倍数全部标记为合数。时间复杂度为<br>$\Theta(n\cdot log_2 n)$ 。</p>
+<h2 id="线性筛"><a href="#线性筛" class="headerlink" title="线性筛"></a>线性筛</h2><p>考虑优化埃氏筛。发现每个数都被它所有的质因数打上标记。可以通过使每个数都只被它最小的质因子筛去。将每个数的质数倍的数标记为合数（无论其本身是不是合数），这样可以保证每个数只会被自己最小的质因子筛去。</p>
+<h2 id="mathbf-Miller-Rabin"><a href="#mathbf-Miller-Rabin" class="headerlink" title="$\mathbf{Miller-Rabin}$"></a>$\mathbf{Miller-Rabin}$</h2><p>当我们需要判断一个数是否是质数时，我们需要 $\Theta(\sqrt{n})$<br>的时间判断。当这个数较大的时候，我们就不能使用枚举。考虑使用费马小定理。但当<br>$\gcd(a,b)=1$ 且 $a^p\equiv a\pmod{p}$ 时，不能得出 $p$<br>是质数的结论。这个时候我们引入二次探测。如果 $p$ 为质数，且 $0&lt;x&lt;p$<br>则方程 $x^2\equiv 1\pmod{p}$ 的解为 $x=1$ 或 $x=p-1$ 。 $Miller-Rabin$<br>判断 $n$ 是否为质数的流程为：首先判断 $0,1,2$<br>和偶数。先随机取一个较小的质数 $p$ ，设 $s,t$ 满足 $2^s\cdot t=n-1$ 。算出<br>$p^t$ ，进行 $s$<br>次二次探测，每次进行平方，最后用费马小定理判断。多次取不同的 $p$<br>进行判断，如果全部通过，那么 $n$ 大概率是质数。算法时间复杂度为<br>$\Theta(p\cdot \log_2^3 n)$</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><h2 id="数论函数"><a href="#数论函数" class="headerlink" title="数论函数"></a>数论函数</h2><p>数论函数是指这样一类函数：其定义域是正整数，值域是一个数集。定义两个数论函数的加法，为逐项相加，即<br>$(\mathbf{f+g})(n)=\mathbf{f}(n)+\mathbf{g}(n)$<br>。数乘，即一个数乘到一个数论函数上，定义为这个数和每一项都相乘，即<br>$(x\cdot \mathbf{f})(n)=x\cdot \mathbf{f}(n)$ 。</p>
+<h2 id="狄利克雷卷积"><a href="#狄利克雷卷积" class="headerlink" title="狄利克雷卷积"></a>狄利克雷卷积</h2><p>狄利克雷卷积是数论函数的一个运算。设 $\mathbf{h=f\times g}$ ，那么有<br>$\mathbf{h}(n)=\sum_{i|n} \mathbf{f}(i)\cdot \mathbf{g}(\frac{n}{i})$<br>它拥有以下性质：</p>
+<ul>
+<li>$\mathbf{f\times g=g\times f}$</li>
+<li>$\mathbf{(f\times g)\times h=f\times (g\times h)}$</li>
+<li>$\mathbf{(f+g)\times h=f\times h+g\times h}$</li>
+<li>$(x\times \mathbf{f})\times \mathbf{g}=x\times (\mathbf{f\times g})$</li>
+<li>$\epsilon \times \mathbf{f}=\mathbf{f}$</li>
+</ul>
+<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>欧拉函数 $\phi(n)$ 是小于或等于 $n$ 的正整数中与 $n$<br>互质的数的数目。通式为 $\varphi(x)=x\cdot \prod_{i=1}^n (1-\frac{1}{p_i})$<br>其中 $p_1,p_2\cdots p_n$ 为 $x$<br>的质因子。处理可以用定义求解，也可以用埃氏筛和线性筛求解。</p>
+<h2 id="莫比乌斯函数"><a href="#莫比乌斯函数" class="headerlink" title="莫比乌斯函数"></a>莫比乌斯函数</h2><p>莫比乌斯函数的通式为 $\mu (n)=<br>    \begin{cases}<br>        1\quad n=1\\<br>        (-1)^k\quad p_1\times p_2\times \cdots \times p_n\\<br>        0\quad else<br>    \end{cases}$ 莫比乌斯函数主要用于容斥原理。</p>
+
       
     </div>
 
@@ -1040,389 +531,82 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
     
 
     
+      <div>
+        
+
+
+
+
+  
+
+
+
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>LWQ</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    
+    <a href="https://big-showers.github.io/2019/08/21/数论总结/" title="数论总结">https://big-showers.github.io/2019/08/21/数论总结/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！</li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://big-showers.github.io/2019/07/14/浅谈KMP/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LWQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BIG-Showers' Blog">
-    </span>
-
-    
-      <header class="post-header">
-
         
+          
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/14/浅谈KMP/" class="post-title-link" itemprop="url">浅谈KMP</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-
+        <div class="post-tags">
           
+            <a href="/tags/Summarize/" rel="tag"># Summarize</a>
           
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：07-14-2019 14:28:57" itemprop="dateCreated datePublished" datetime="2019-07-14T14:28:57+08:00">07-14-2019</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：08-22-2019 08:05:52" itemprop="dateModified" datetime="2019-08-22T08:05:52+08:00">08-22-2019</time>
-              </span>
-            
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span title="本文字数">2.3k</span>
-            </span>
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span title="阅读时长">2 分钟</span>
-            </span>
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
+      
+        <div class="post-widgets">
         
-          
-            <p>
-              什么是 $\mathbf{KMP}$$KMP$ 算法是一种改进的字符串匹配算法，由$D.E.$ K $nuth$，$J.H.$ M $orris$和$V.R.$ P $ratt$提出的，因此人们称它为克努特—莫里斯—普拉特操作（简称 $KMP$ 算法）。 $KMP$ 算法的关键是利用匹配失败后的信息
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/14/浅谈KMP/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://big-showers.github.io/2019/07/10/浅谈Splay/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="LWQ">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.jpeg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="BIG-Showers' Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/07/10/浅谈Splay/" class="post-title-link" itemprop="url">浅谈Splay</a>
-              
-            
-          </h1>
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
         
 
-        <div class="post-meta">
+        
 
-          
-          
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：07-10-2019 08:27:12" itemprop="dateCreated datePublished" datetime="2019-07-10T08:27:12+08:00">07-10-2019</time>
-            </span>
-          
-
-          
-            
-
-            
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：08-22-2019 08:06:30" itemprop="dateModified" datetime="2019-08-22T08:06:30+08:00">08-22-2019</time>
-              </span>
-            
-          
-
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          <br>
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">本文字数：</span>
-              
-              <span title="本文字数">8.2k</span>
-            </span>
-          
-
-          
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              
-              <span title="阅读时长">7 分钟</span>
-            </span>
-          
-
-          
-
+        
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
       
       
 
       
-        
-          
-            <p>
-              什么是 $\mathbf{Splay}$伸展树（$Splay\quad Tree$），也叫分裂树，是一种二叉排序树，它能在 $\Theta(log_2 n)$ 内完成插入、查找和删除操作。它由丹尼尔·斯立特（ $Daniel\quad Sleator$ ） 和 罗伯特·恩卓·塔扬（ $Robert\
-              ...
-            </p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/07/10/浅谈Splay/#more" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/14/浅谈KMP/" rel="next" title="浅谈KMP">
+                <i class="fa fa-chevron-left"></i> 浅谈KMP
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+            
+          </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/08/21/图论总结/" rel="prev" title="图论总结">
+                图论总结 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1432,14 +616,19 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="gitalk-container">
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1459,8 +648,17 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1563,6 +761,23 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基础数论"><span class="nav-number">1.</span> <span class="nav-text">基础数论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展欧几里得算法-mathbf-exgcd"><span class="nav-number">1.1.</span> <span class="nav-text">扩展欧几里得算法 $\mathbf{exgcd}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#乘法逆元-mathbf-inv"><span class="nav-number">1.2.</span> <span class="nav-text">乘法逆元 $\mathbf{inv}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#费马小定理"><span class="nav-number">1.3.</span> <span class="nav-text">费马小定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展欧几里得"><span class="nav-number">1.4.</span> <span class="nav-text">扩展欧几里得</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性递推计算"><span class="nav-number">1.5.</span> <span class="nav-text">线性递推计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#阶乘递推计算"><span class="nav-number">1.6.</span> <span class="nav-text">阶乘递推计算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中国剩余定理-mathbf-crt"><span class="nav-number">1.7.</span> <span class="nav-text">中国剩余定理 $\mathbf{crt}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展中国剩余定理-mathbf-excrt"><span class="nav-number">1.8.</span> <span class="nav-text">扩展中国剩余定理 $\mathbf{excrt}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大步小步算法-mathbf-BSGS"><span class="nav-number">1.9.</span> <span class="nav-text">大步小步算法 $\mathbf{BSGS}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#扩展大步小步算法-mathbf-exBSGS"><span class="nav-number">1.10.</span> <span class="nav-text">扩展大步小步算法 $\mathbf{exBSGS}$</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#卢卡斯定理-mathbf-Lucas"><span class="nav-number">1.11.</span> <span class="nav-text">卢卡斯定理 $\mathbf{Lucas}$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#素数合数"><span class="nav-number">2.</span> <span class="nav-text">素数合数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举判断"><span class="nav-number">2.1.</span> <span class="nav-text">枚举判断</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#埃氏筛"><span class="nav-number">2.2.</span> <span class="nav-text">埃氏筛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线性筛"><span class="nav-number">2.3.</span> <span class="nav-text">线性筛</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mathbf-Miller-Rabin"><span class="nav-number">2.4.</span> <span class="nav-text">$\mathbf{Miller-Rabin}$</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#函数"><span class="nav-number">3.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数论函数"><span class="nav-number">3.1.</span> <span class="nav-text">数论函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#狄利克雷卷积"><span class="nav-number">3.2.</span> <span class="nav-text">狄利克雷卷积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欧拉函数"><span class="nav-number">3.3.</span> <span class="nav-text">欧拉函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#莫比乌斯函数"><span class="nav-number">3.4.</span> <span class="nav-text">莫比乌斯函数</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1752,6 +967,10 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
 
 
   
+  <script src="/js/scrollspy.js?v=7.2.0"></script>
+<script src="/js/post-details.js?v=7.2.0"></script>
+
+
 
   
 
@@ -1767,6 +986,37 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
 
   
 
+
+  
+    
+
+<script src="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+
+
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '464f75f714990c9c2aa9',
+    clientSecret: '85734b2b69b0c5d8f9dbc670d6bec6fe34550e04',
+    repo: 'big-showers.github.io',
+    owner: 'big-showers',
+    admin: ['big-showers'],
+    id: md5(location.pathname),
+    
+      language: 'zh-CN',
+    
+    distractionFreeMode: 'true'
+  });
+  gitalk.render('gitalk-container');
+</script>
+
+  
 
 
   
@@ -2103,22 +1353,6 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
 
   
   
-    
-      
-        
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-      
-    
-  
 
   
     
@@ -2174,6 +1408,25 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
   
 
   
+  <script>
+    wpac_init = window.wpac_init || [];
+    wpac_init.push({
+      widget: 'Rating',
+      id: 19696,
+      el: 'wpac-rating',
+      color: 'fc6423'
+    });
+    (function() {
+      if ('WIDGETPACK_LOADED' in window) return;
+      WIDGETPACK_LOADED = true;
+      var mc = document.createElement('script');
+      mc.type = 'text/javascript';
+      mc.async = true;
+      mc.src = '//embed.widgetpack.com/widget.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+    })();
+  </script>
+
 
   
 
@@ -2183,7 +1436,7 @@ $\mathbf{01}$ 背包$01$ 背包基本模型，背包的总体积为 $V$ ，总�
   <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
   <script>
   
-    bookmark.loadBookmark();
+    bookmark.scrollToMark('auto', "#更多");
   
   </script>
 
