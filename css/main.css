@@ -1799,7 +1799,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f04132;
+  background: #7eb083;
 }
 .feed-link,
 .chat {
@@ -2795,10 +2795,4 @@ hr {
 }
 .post-gallery .post-gallery-img img {
   padding: 3px;
-}
-* {
-  cursor: url("https://files-cdn.cnblogs.com/files/C-C-C-P/Hexo_cur_nor.ico"), auto !important;
-}
-:active {
-  cursor: url("https://files-cdn.cnblogs.com/files/C-C-C-P/Hexo_cur_act.ico"), auto !important;
 }
